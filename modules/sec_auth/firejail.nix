@@ -1,6 +1,4 @@
 # TODO refine firejail it seems that / is not shielded enough and app armor does not work
-
-
 { pkgs, ... }:
 {
   programs.firejail = {
@@ -16,8 +14,8 @@
           "--env=GTK_THEME=Adwaita:dark"
           # Enable system notifications
           "--dbus-user.talk=org.freedesktop.Notifications"
-	        # For screen sharing
-	        "--dbus-user.talk=org.freedesktop.portal.*"
+          # For screen sharing
+          "--dbus-user.talk=org.freedesktop.portal.*"
         ];
       };
 

@@ -11,7 +11,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
 
     # ready made hardware configurations. e.G.: Power saving
-    #nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     # NixOS unstable channel
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -30,77 +30,58 @@
   #######
   outputs =
     #######
-    { self, nixpkgs, nixos-hardware, nixpkgs-unstable, nix-flatpak, home-manager, ... }: let
-      overlays =  {
-        unstable-packages = final: prev: {
-          unstable = import nixpkgs-unstable {
-            system = "x86_64-linux";
-            config.allowUnfree = true;
+    { self, nixpkgs, nixos-hardware, nixpkgs-unstable, nix-flatpak, home-manager, ... } @ inputs:
+      let
+        # Supported systems for your flake packages, shell, etc.
+        systems = [
+          "aarch64-linux"
+          "x86_64-linux"
+        ];
+        # This is a function that generates an attribute by calling a function you
+        # pass to it, with each system as an argument
+        forAllSystems = nixpkgs.lib.genAttrs systems;
+      in {
+        # Your custom packages
+        # Accessible through 'nix build', 'nix shell', etc
+        #packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
+        # Formatter for your nix files, available through 'nix fmt'
+        # Other options beside 'alejandra' include 'nixpkgs-fmt'
+        #formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
+  
+        # Your custom packages and modifications, exported as overlays
+        overlays = import ./overlays {inherit inputs;};
+        # Reusable nixos modules you might want to export
+        # These are usually stuff you would upstream into nixpkgs
+        nixosModules = import ./modules/nixos;
+        # Reusable home-manager modules you might want to export
+        # These are usually stuff you would upstream into home-manager
+        homeManagerModules = import ./modules/home-manager;
+  
+        # NixOS configuration entrypoint
+        # Available through 'nixos-rebuild --flake .#your-hostname'
+        nixosConfigurations = {
+          # FIXME replace with your hostname
+          crocoite = nixpkgs.lib.nixosSystem {
+            specialArgs = {inherit inputs;};
+            modules = [
+              # > Our main nixos configuration file <
+              ./hosts/crocoite.nix
+            ];
           };
         };
-      }; 
-    in {
-      # NOTE: 'nixos' is the default hostname set by the installer
-      nixosConfigurations.crocoite = nixpkgs.lib.nixosSystem {
-
-        modules = [
-          ( let
-            pkgs2 = nixpkgs.legacyPackages."x86_64-linux";
-          in 
-          {
-            nixpkgs.overlays = [ overlays.unstable-packages ];
-
-            nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-            # https://lix.systems/ Lix is a modern, delicious implementation of the Nix package manager,
-            # focused on correctness, usability, and growth – 
-            # and committed to doing right by its community.
-            nix.package = pkgs2.lix;
-
-            # This value determines the NixOS release from which the default
-            # settings for stateful data, like file locations and database versions
-            # on your system were taken. It‘s perfectly fine and recommended to leave
-            # this value at the release version of the first install of this system.
-            # Before changing this value read the documentation for this option
-            # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-            system.stateVersion = "24.05"; # Did you read the comment?
-          })
-          nix-flatpak.nixosModules.nix-flatpak
-
-          ./hardware-configuration.nix
-          #nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
-
-          ./modules/basic_system_config.nix
-          ./modules/networking.nix
-          ./modules/boot_theming.nix
-
-          ./modules/specific_hardware/scan_and_print.nix
-          ./modules/specific_hardware/fwupd.nix
-          ./modules/specific_hardware/bluetooth.nix
-
-          ./modules/sec_auth/firejail.nix
-          ./modules/sec_auth/login-manager.nix
-          ./modules/sec_auth/users_and_permissions.nix
-          ./modules/sec_auth/ssh.nix
-
-          ./modules/software/software.nix
-          ./modules/software/game.nix
-          ./modules/software/audio_video.nix
-          ./modules/software/obs-studio.nix
-
-          ./modules/wm_and_de/hyprland.nix
-
-          ./modules/pkg_mgrmnt/flatpak.nix
-          ./modules/pkg_mgrmnt/podman.nix
-          ./modules/pkg_mgrmnt/store_pkg_file.nix
-
-          ./modules/software/nix-helper/index.nix
-          ./modules/software/nix-helper/doc.nix
-          ./modules/software/nix-helper/nix-ld.nix
-
-          ./modules/software/browser/firefox.nix
-          ./modules/software/browser/brave.nix
-        ];
+  
+        ## Standalone home-manager configuration entrypoint
+        ## Available through 'home-manager --flake .#your-username@your-hostname'
+        #homeConfigurations = {
+        #  # FIXME replace with your username@hostname
+        #  "your-username@your-hostname" = home-manager.lib.homeManagerConfiguration {
+        #    pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        #    extraSpecialArgs = {inherit inputs;};
+        #    modules = [
+        #      # > Our main home-manager configuration file <
+        #      ./home-manager/home.nix
+        #    ];
+        #  };
+        #};
       };
-    };
 }

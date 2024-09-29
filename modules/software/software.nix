@@ -1,8 +1,6 @@
-{ pkgs, ... }: {
-  # Allow unfree packages
-  #unstable.config.allowUnfree = true;
-  nixpkgs.config.allowUnfree = true;
-
+{ pkgs, inputs, config, ... }: let 
+  unstable_list = [ inputs.nixpkgs-unstable.legacyPackages."x86_64-linux".neovim ];
+in {
   # also opens the TCP and UDP port from 1714 to 1764
   programs.kdeconnect.enable = true;
 
@@ -39,7 +37,7 @@
     lm_sensors
 
     # neovim
-    unstable.neovim
+    # unstable.neovim
     git
     gnumake
     gcc
@@ -74,7 +72,9 @@
     keepassxc
     #minecraft
     element-desktop
-  ];
+  ] ++ unstable_list;
+
+
   fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk
