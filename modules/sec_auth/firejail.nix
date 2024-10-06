@@ -1,9 +1,8 @@
 # TODO refine firejail it seems that / is not shielded enough and app armor does not work
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   programs.firejail = {
-  enable = true;
-  wrappedBinaries = {
+    enable = true;
+    wrappedBinaries = {
       firefox = {
         executable = "${pkgs.firefox}/bin/firefox";
         profile = "${pkgs.firejail}/etc/firejail/firefox.profile";
@@ -51,11 +50,10 @@
     };
   };
   environment.etc = {
-  "firejail/brave.local".text = ''
+    "firejail/brave.local".text = ''
       whitelist ''${HOME}/.config/brave
       whitelist ''${HOME}/.local
       whitelist ''${HOME}/Downloads
-  '';
+    '';
   };
-
 }

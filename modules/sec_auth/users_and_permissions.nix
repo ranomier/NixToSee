@@ -1,10 +1,9 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ranomier = {
     isNormalUser = true;
     description = "Ranomier";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     #packages = with pkgs; [];
   };
 
@@ -23,14 +22,14 @@
   # This is using a rec (recursive) expression to set and access XDG_BIN_HOME within the expression
   # For more on rec expressions see https://nix.dev/tutorials/first-steps/nix-language#recursive-attribute-set-rec
   environment.sessionVariables = rec {
-    XDG_CACHE_HOME  = "$HOME/.cache";
+    XDG_CACHE_HOME = "$HOME/.cache";
     XDG_CONFIG_HOME = "$HOME/.config";
-    XDG_DATA_HOME   = "$HOME/.local/share";
-    XDG_STATE_HOME  = "$HOME/.local/state";
+    XDG_DATA_HOME = "$HOME/.local/share";
+    XDG_STATE_HOME = "$HOME/.local/state";
 
     # Not officially in the specification
-    XDG_BIN_HOME    = "$HOME/.local/mybin";
-    PATH = [ 
+    XDG_BIN_HOME = "$HOME/.local/mybin";
+    PATH = [
       "${XDG_BIN_HOME}"
     ];
   };
@@ -47,7 +46,6 @@
   ];
 
   security.apparmor.enable = true;
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

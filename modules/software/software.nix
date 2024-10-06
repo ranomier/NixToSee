@@ -1,18 +1,15 @@
-{ pkgs, inputs, config, ... }: let 
-  unstable_list = [ inputs.nixpkgs-unstable.legacyPackages."x86_64-linux".neovim ];
+{
+  pkgs,
+  inputs,
+  config,
+  ...
+}: let
+  unstable_list = [inputs.nixpkgs-unstable.legacyPackages."x86_64-linux".neovim];
 in {
   # also opens the TCP and UDP port from 1714 to 1764
   programs.kdeconnect.enable = true;
 
-  # for running android apps
-  virtualisation.waydroid.enable =
-    true; # also starts the systemd service waydroid-container
-
-  # virt manager, for running VM's
-  virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
-
-  environment.pathsToLink = [ "/share/foot" ];
+  environment.pathsToLink = ["/share/foot"];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -21,59 +18,60 @@ in {
       export GDK_BACKEND='x11'
       exec "${pkgs.amberol}/bin/amberol" "$@"
     '';
-  in with pkgs; [
-    # low level stuff
-    efibootmgr
-    #exfat
-    exfatprogs
-    greetd.greetd
-    greetd.tuigreet
-    killall
-    vulnix
+  in
+    with pkgs;
+      [
+        # low level stuff
+        efibootmgr
+        #exfat
+        exfatprogs
+        greetd.greetd
+        greetd.tuigreet
+        killall
+        vulnix
 
-    # hardware
-    brightnessctl
-    usbutils
-    lm_sensors
+        # hardware
+        brightnessctl
+        usbutils
+        lm_sensors
 
-    # neovim
-    # unstable.neovim
-    git
-    gnumake
-    gcc
-    nodePackages.npm
-    nodejs-slim
-    python3
-    fd
-    nodejs-slim
-    cargo
-    rustc
+        # neovim
+        # unstable.neovim
+        git
+        gnumake
+        gcc
+        nodePackages.npm
+        nodejs-slim
+        python3
+        fd
+        nodejs-slim
+        cargo
+        rustc
 
-    # tooling
-    htop
-    ncdu
-    wget
-    miniserve
-    file
-    unzip
-    tmux
-    qemu
-    home-manager
+        # tooling
+        htop
+        ncdu
+        wget
+        miniserve
+        file
+        unzip
+        tmux
+        qemu
+        home-manager
 
-    # move to homemanager?
-    lxqt.pavucontrol-qt
-    mumble
-    amberol_wrapper
-    amberol
-    mpv
-    zathura
-    feh
-    #unstable.obsidian
-    keepassxc
-    #minecraft
-    element-desktop
-  ] ++ unstable_list;
-
+        # move to homemanager?
+        mumble
+        amberol_wrapper
+        amberol
+        mpv
+        zathura
+        feh
+        #unstable.obsidian
+        keepassxc
+        #minecraft
+        element-desktop
+      ]
+      ++ unstable_list;
 
   fonts.packages = with pkgs; [
     noto-fonts
@@ -89,7 +87,7 @@ in {
     fira-code-symbols
     #droid-sans-mono
     (nerdfonts.override {
-      fonts = [ "FiraCode" "DroidSansMono" "JetBrainsMono" ];
+      fonts = ["FiraCode" "DroidSansMono" "JetBrainsMono"];
     })
   ];
 }

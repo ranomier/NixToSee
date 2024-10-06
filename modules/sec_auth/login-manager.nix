@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
   services.greetd = {
@@ -7,14 +6,14 @@
     vt = 7;
     settings = {
       default_session = {
-        command = ''${pkgs.greetd.tuigreet}/bin/tuigreet \
-	  --time \
-	  --time-format '%Y-%m-%dT%H:%M:%S %A' \
-	  --remember \
-	  --user-menu \
-	  --theme 'border=lightgreen;text=lightgreen;prompt=lightgreen;time=lightgreen;action=lightgreen;button=lightgreen;input=lightgreen' \
-	  --cmd hyprland'';
-	  # removed elements from theme: container
+        command = ''          ${pkgs.greetd.tuigreet}/bin/tuigreet \
+          	  --time \
+          	  --time-format '%Y-%m-%dT%H:%M:%S %A' \
+          	  --remember \
+          	  --user-menu \
+          	  --theme 'border=lightgreen;text=lightgreen;prompt=lightgreen;time=lightgreen;action=lightgreen;button=lightgreen;input=lightgreen' \
+          	  --cmd hyprland'';
+        # removed elements from theme: container
         user = "greeter";
       };
     };

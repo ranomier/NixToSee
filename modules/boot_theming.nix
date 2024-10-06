@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   boot = let
     theme_name = "deus_ex";
   in {
@@ -11,7 +11,7 @@
       themePackages = with pkgs; [
         # By default we would install all themes
         (adi1090x-plymouth-themes.override {
-          selected_themes = [ theme_name ];
+          selected_themes = [theme_name];
         })
       ];
     };
@@ -32,6 +32,5 @@
     # It's still possible to open the bootloader list by pressing any key
     # It will just not appear on screen unless a key is pressed
     loader.timeout = 0;
-
   };
 }

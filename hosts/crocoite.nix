@@ -1,4 +1,9 @@
-{ pkgs, overlays, inputs, ... }: {
+{
+  pkgs,
+  overlays,
+  inputs,
+  ...
+}: {
   #MANPAGER='nvim +Man!'
 
   # This value determines the NixOS release from which the default
@@ -15,10 +20,10 @@
 
   #nixpkgs.overlays = [ overlays.unstable-packages ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # https://lix.systems/ Lix is a modern, delicious implementation of the Nix package manager,
-  # focused on correctness, usability, and growth – 
+  # focused on correctness, usability, and growth –
   # and committed to doing right by its community.
   nix.package = pkgs.lix;
   imports = [
@@ -41,6 +46,7 @@
     ../modules/sec_auth/ssh.nix
 
     ../modules/software/software.nix
+    ../modules/software/virt.nix
     ../modules/software/game.nix
     ../modules/software/audio_video.nix
     ../modules/software/obs-studio.nix

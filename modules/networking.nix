@@ -1,5 +1,8 @@
-{ pkgs, lib, ... }:
-{ 
+{
+  pkgs,
+  lib,
+  ...
+}: {
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -30,8 +33,8 @@
   # networking.interfaces.enp5s0.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp3s0.useDHCP = lib.mkDefault true;
   # Open ports in the firewall.
-  #networking.firewall.allowedTCPPorts = [ 8080 ];
-  #networking.firewall.allowedUDPPorts = [ 8080 ];
+  networking.firewall.allowedTCPPorts = [8080];
+  networking.firewall.allowedUDPPorts = [8080];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 

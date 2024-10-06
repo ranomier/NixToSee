@@ -1,5 +1,4 @@
-{ pkgs, ... }: {
-
+{pkgs, ...}: {
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = false;
@@ -38,7 +37,7 @@
     platformTheme = "qt5ct";
     style = "kvantum";
   };
- 
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -63,7 +62,7 @@
     slurp
     satty
     flameshot
-    
+
     # theming
     gruvbox-plus-icons
     gruvbox-gtk-theme

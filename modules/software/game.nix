@@ -1,6 +1,6 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   #environment.systemPackages = with pkgs; [ ];
-  # hardware.steam-hardware.enable = true; # Note that this is already enabled with programs.steam.enable = true; 
+  # hardware.steam-hardware.enable = true; # Note that this is already enabled with programs.steam.enable = true;
   programs.steam = {
     enable = true;
     remotePlay.openFirewall =
@@ -29,9 +29,9 @@
   #  environment.systemPackages = with pkgs; [
   #    (steam.override { /* Your overrides here */ }).run
   #  ];
-  # Install the game by setting the executable attribute on the installer and then running it via steam-run ./your_installer.sh. After installation, edit the "~/.local/share/applications/your_game.desktop" and replace the exec line from Exec="/home/user/game/start.sh" "" with Exec="steam-run" "/home/user/game/start.sh". 
+  # Install the game by setting the executable attribute on the installer and then running it via steam-run ./your_installer.sh. After installation, edit the "~/.local/share/applications/your_game.desktop" and replace the exec line from Exec="/home/user/game/start.sh" "" with Exec="steam-run" "/home/user/game/start.sh".
 
-  environment.systemPackages = with pkgs; [ steam-run ];
+  environment.systemPackages = with pkgs; [steam-run];
 
-  programs.steam.extraCompatPackages = with pkgs; [ proton-ge-bin ];
+  programs.steam.extraCompatPackages = with pkgs; [proton-ge-bin];
 }

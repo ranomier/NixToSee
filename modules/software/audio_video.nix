@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -52,5 +51,7 @@
   environment.systemPackages = with pkgs; [
     helvum
     easyeffects
-    ];
+    pwvucontrol
+    lxqt.pavucontrol-qt
+  ];
 }

@@ -1,8 +1,8 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   # The logical browser of choice
   programs.firefox.enable = true;
 
-  xdg.mime.defaultApplications = let 
+  xdg.mime.defaultApplications = let
     browser_desktop_file = "firefox.desktop";
   in {
     "text/html" = browser_desktop_file;

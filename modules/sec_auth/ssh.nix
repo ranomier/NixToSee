@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   programs.ssh = {
     startAgent = true;
     enableAskPassword = true;
@@ -17,7 +16,6 @@
     #ssh-askpass-fullscreen
     lxqt.lxqt-openssh-askpass
   ];
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
