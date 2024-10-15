@@ -1,10 +1,11 @@
 {
   pkgs,
   inputs,
-  config,
   ...
 }: let
-  unstable_list = [inputs.nixpkgs-unstable.legacyPackages."x86_64-linux".neovim];
+  unstable_list = [
+    inputs.nixpkgs-unstable.legacyPackages."x86_64-linux".neovim
+  ];
 in {
   # also opens the TCP and UDP port from 1714 to 1764
   programs.kdeconnect.enable = true;

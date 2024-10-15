@@ -30,38 +30,38 @@
     inputs.nix-flatpak.nixosModules.nix-flatpak
 
     #nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
-    ../hardware-configuration.nix
+    ./hardware-configuration.nix
 
-    ../modules/basic_system_config.nix
-    ../modules/networking.nix
-    ../modules/boot_theming.nix
+    ../../modules/basic_system_config.nix
+    ../../modules/networking.nix
+    ../../modules/boot_theming.nix
 
-    ../modules/specific_hardware/scan_and_print.nix
-    ../modules/specific_hardware/fwupd.nix
-    ../modules/specific_hardware/bluetooth.nix
+    ../../modules/specific_hardware/scan_and_print.nix
+    ../../modules/specific_hardware/fwupd.nix
+    ../../modules/specific_hardware/bluetooth.nix
 
-    ../modules/sec_auth/firejail.nix
-    ../modules/sec_auth/login-manager.nix
-    ../modules/sec_auth/users_and_permissions.nix
-    ../modules/sec_auth/ssh.nix
+    ../../modules/sec_auth/firejail.nix
+    ../../modules/sec_auth/login-manager.nix
+    ../../modules/sec_auth/users_and_permissions.nix
+    ../../modules/sec_auth/ssh.nix
 
-    ../modules/software/software.nix
-    ../modules/software/virt.nix
-    ../modules/software/game.nix
-    ../modules/software/audio_video.nix
-    ../modules/software/obs-studio.nix
+    ../../modules/software/software.nix
+    ../../modules/software/virt.nix
+    ../../modules/software/game.nix
+    ../../modules/software/audio_video.nix
+    ../../modules/software/obs-studio.nix
 
-    ../modules/wm_and_de/hyprland.nix
+    ../../modules/wm_and_de/hyprland.nix
 
-    ../modules/pkg_mgrmnt/flatpak.nix
-    ../modules/pkg_mgrmnt/podman.nix
-    ../modules/pkg_mgrmnt/store_pkg_file.nix
+    ../../modules/pkg_mgrmnt/flatpak.nix
+    ../../modules/pkg_mgrmnt/podman.nix
+    ../../modules/pkg_mgrmnt/store_pkg_file.nix
 
-    ../modules/software/nix-helper/index.nix
-    ../modules/software/nix-helper/doc.nix
-    ../modules/software/nix-helper/nix-ld.nix
+    ../../modules/software/nix-helper/index.nix
+    ../../modules/software/nix-helper/doc.nix
+    ../../modules/software/nix-helper/nix-ld.nix
 
-    ../modules/software/browser/firefox.nix
-    ../modules/software/browser/brave.nix
+    ../../modules/software/browser/firefox.nix
+    ../../modules/software/browser/brave.nix
   ];
 }

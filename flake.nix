@@ -46,6 +46,15 @@
       # This is a function that generates an attribute by calling a function you
       # pass to it, with each system as an argument
       forAllSystems = nixpkgs.lib.genAttrs systems;
+
+      host_helper = hostname: {
+        ${hostname} = nixpkgs.lib.nixosSystem {
+          specialArgs = {inherit inputs;};
+          modules = [
+            ./hosts/${hostname}/${hostname}.nix
+          ];
+        };
+      };
     in {
       # Your custom packages
       # Accessible through 'nix build', 'nix shell', etc
@@ -65,15 +74,7 @@
 
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#your-hostname'
-      nixosConfigurations = {
-        crocoite = nixpkgs.lib.nixosSystem {
-          specialArgs = {inherit inputs;};
-          modules = [
-            # > Our main nixos configuration file <
-            ./hosts/crocoite.nix
-          ];
-        };
-      };
+      nixosConfigurations = host_helper "crocoite"; # // (host_helper example);
 
       ## Standalone home-manager configuration entrypoint
       ## Available through 'home-manager --flake .#your-username@your-hostname'
