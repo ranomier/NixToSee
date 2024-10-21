@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = false;
@@ -17,17 +21,23 @@
       ];
     };
   };
-
   # Enable the hyprland window manager with additions
   programs = {
     hyprland = {
       enable = true;
       xwayland.enable = true;
       systemd.setPath.enable = true;
+      #package = pkgs.unstable.hyprland;
     };
-    hyprlock.enable = true;
+    hyprlock = {
+      enable = true;
+      #package = pkgs.unstable.hyprlock;
+    };
   };
-  services.hypridle.enable = true;
+  services.hypridle = {
+    enable = true;
+    #package = pkgs.unstable.hypridle;
+  };
 
   # for mounting stuff, also needs a auth agent like lxqt.lxqt-policykit
   services.gvfs.enable = true;

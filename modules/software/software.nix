@@ -3,8 +3,8 @@
   inputs,
   ...
 }: let
-  unstable_list = [
-    inputs.nixpkgs-unstable.legacyPackages."x86_64-linux".neovim
+  unstable_list = with inputs.nixpkgs-unstable.legacyPackages."x86_64-linux"; [
+    neovim
   ];
 in {
   # also opens the TCP and UDP port from 1714 to 1764
@@ -57,6 +57,7 @@ in {
         file
         unzip
         tmux
+        ripgrep
         qemu
         home-manager
 
@@ -64,6 +65,7 @@ in {
         mumble
         amberol_wrapper
         amberol
+        nuclear
         mpv
         zathura
         feh

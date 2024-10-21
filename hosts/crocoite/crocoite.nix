@@ -58,7 +58,7 @@
     ../../modules/pkg_mgrmnt/store_pkg_file.nix
 
     ../../modules/software/nix-helper/index.nix
-    ../../modules/software/nix-helper/doc.nix
+    #../../modules/software/nix-helper/doc.nix
     ../../modules/software/nix-helper/nix-ld.nix
 
     ../../modules/software/browser/firefox.nix

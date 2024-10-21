@@ -33,6 +33,17 @@
         ];
       };
 
+      nuclear = {
+        executable = "${pkgs.nuclear}/bin/nuclear";
+        profile = "${pkgs.firejail}/etc/firejail/nuclear.profile";
+        extraArgs = [
+          # Enforce dark mode
+          "--env=GTK_THEME=Adwaita:dark"
+          # Enable system notifications
+          "--dbus-user.talk=org.freedesktop.Notifications"
+        ];
+      };
+
       brave = {
         executable = "${pkgs.brave}/bin/brave";
         profile = "${pkgs.firejail}/etc/firejail/brave.profile";

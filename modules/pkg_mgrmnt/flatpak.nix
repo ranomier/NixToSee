@@ -54,6 +54,10 @@
       origin = "flathub";
       appId = "dev.vencord.Vesktop";
     } # More usable discord for linux
+    {
+      origin = "flathub";
+      appId = "io.github.Soundux";
+    } # More usable discord for linux
 
     #"com.obsproject.Studio" #this is another way to write it
   ];
