@@ -12,7 +12,7 @@
           	  --remember \
           	  --user-menu \
           	  --theme 'border=lightgreen;text=lightgreen;prompt=lightgreen;time=lightgreen;action=lightgreen;button=lightgreen;input=lightgreen' \
-          	  --cmd hyprland'';
+          	  --cmd Hyprland'';
         # removed elements from theme: container
         user = "greeter";
       };

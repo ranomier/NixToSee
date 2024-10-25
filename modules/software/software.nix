@@ -1,12 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: let
-  unstable_list = with inputs.nixpkgs-unstable.legacyPackages."x86_64-linux"; [
-    neovim
-  ];
-in {
+{pkgs, ...}: {
   # also opens the TCP and UDP port from 1714 to 1764
   programs.kdeconnect.enable = true;
 
@@ -20,61 +12,58 @@ in {
       exec "${pkgs.amberol}/bin/amberol" "$@"
     '';
   in
-    with pkgs;
-      [
-        # low level stuff
-        efibootmgr
-        #exfat
-        exfatprogs
-        greetd.greetd
-        greetd.tuigreet
-        killall
-        vulnix
+    with pkgs; [
+      # low level stuff
+      efibootmgr
+      #exfat
+      exfatprogs
+      greetd.greetd
+      greetd.tuigreet
+      killall
+      vulnix
 
-        # hardware
-        brightnessctl
-        usbutils
-        lm_sensors
+      # hardware
+      brightnessctl
+      usbutils
+      lm_sensors
 
-        # neovim
-        # unstable.neovim
-        git
-        gnumake
-        gcc
-        nodePackages.npm
-        nodejs-slim
-        python3
-        fd
-        nodejs-slim
-        cargo
-        rustc
+      unstable.neovim
+      git
+      gnumake
+      gcc
+      nodePackages.npm
+      nodejs-slim
+      python3
+      fd
+      nodejs-slim
+      cargo
+      rustc
 
-        # tooling
-        htop
-        ncdu
-        wget
-        miniserve
-        file
-        unzip
-        tmux
-        ripgrep
-        qemu
-        home-manager
+      # tooling
+      htop
+      ncdu
+      wget
+      miniserve
+      file
+      unzip
+      tmux
+      ripgrep
+      qemu
+      home-manager
 
-        # move to homemanager?
-        mumble
-        amberol_wrapper
-        amberol
-        nuclear
-        mpv
-        zathura
-        feh
-        #unstable.obsidian
-        keepassxc
-        #minecraft
-        element-desktop
-      ]
-      ++ unstable_list;
+      # move to homemanager?
+      mumble
+      amberol_wrapper
+      amberol
+      nuclear
+      mpv
+      zathura
+      feh
+      #unstable.obsidian
+      keepassxc
+      #minecraft
+      element-desktop
+    ];
 
   fonts.packages = with pkgs; [
     noto-fonts

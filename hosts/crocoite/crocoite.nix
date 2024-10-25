@@ -1,6 +1,5 @@
 {
   pkgs,
-  overlays,
   inputs,
   ...
 }: {
@@ -16,9 +15,32 @@
 
   # Allow unfree packages
   #unstable.config.allowUnfree = true;
-  nixpkgs.config.allowUnfree = true;
 
   #nixpkgs.overlays = [ overlays.unstable-packages ];
+  nixpkgs = {
+    # You can add overlays here
+    overlays = with inputs.self.overlays; [
+      # Add overlays your own flake exports (from overlays and pkgs dir):
+      #additions
+      #modifications
+      unstable-packages
+
+      # You can also add overlays exported from other flakes:
+      # neovim-nightly-overlay.overlays.default
+
+      # Or define it inline, for example:
+      # (final: prev: {
+      #   hi = final.hello.overrideAttrs (oldAttrs: {
+      #     patches = [ ./change-hello-to-hi.patch ];
+      #   });
+      # })
+    ];
+    # Configure your nixpkgs instance
+    config = {
+      # Disable if you don't want unfree packages
+      allowUnfree = true;
+    };
+  };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
