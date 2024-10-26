@@ -1,25 +1,15 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.systemd-boot.configurationLimit = 20;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  networking.hostName = "crocoite"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
+{...}: {
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";
+
+  #i18n.supportedLocales = [
+  #  "en_GB.UTF-8"
+  #  "en_US.UTF-8"
+  #  "de_DE.UTF-8"
+  #];
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "de_DE.UTF-8";

@@ -41,6 +41,7 @@
       allowUnfree = true;
     };
   };
+  networking.hostName = "crocoite"; # Define your hostname.
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
@@ -53,8 +54,9 @@
 
     #nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
     ./hardware-configuration.nix
+    ./boot.nix
 
-    ../../modules/basic_system_config.nix
+    ../../modules/locale.nix
     ../../modules/networking.nix
     ../../modules/boot_theming.nix
 
