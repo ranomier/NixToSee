@@ -6,7 +6,7 @@
     vt = 7;
     settings = {
       default_session = {
-        command = ''          ${pkgs.greetd.tuigreet}/bin/tuigreet \
+        command = ''${pkgs.greetd.tuigreet}/bin/tuigreet \
           	  --time \
           	  --time-format '%Y-%m-%dT%H:%M:%S %A' \
           	  --remember \

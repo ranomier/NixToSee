@@ -45,6 +45,6 @@
     ./hardware-configuration.nix
 
     ../../modules/locale.nix
-    ../../modules/game/server/factorio.nix
+    ../../modules/game/server/factorio/factorio.nix
   ];
 }

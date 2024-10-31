@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   # Also enable non-free packages or else the factorio download will fail:
-  nixpkgs.config.allowUnfree = true;
+  #nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
     factorio-headless
@@ -9,6 +9,10 @@
   services.factorio = {
     enable = true;
     openFirewall = true;
+    package = pkgs.factorio-headless.override {
+      versionsJson = ./versions.json;
+    };
+
     #mods =
     #  let
     #    inherit (pkgs) lib;

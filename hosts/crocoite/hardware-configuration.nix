@@ -12,7 +12,7 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = ["nvme" "ehci_pci" "xhci_pci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc"];
+  boot.initrd.availableKernelModules = ["nvme" "ehci_pci" "xhci_pci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-amd"];
   boot.extraModulePackages = [];
@@ -40,6 +40,7 @@
   #boot.blacklistedKernelModules = [ "acpi-cpufreq" ];
   boot.kernelParams = [
     "amd_pstate=active"
+    "usbcore.autosuspend=-1"
   ];
   #services.auto-epp.enable = true;
 

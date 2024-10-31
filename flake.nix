@@ -6,6 +6,9 @@
     # Main nix package repository
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
 
+    # NixOS unstable channel
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -20,9 +23,6 @@
     nix-flatpak = {
       url = "github:gmodena/nix-flatpak";
     };
-
-    # NixOS unstable channel
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
   #######
@@ -39,7 +39,7 @@
     } @ inputs: let
       # Supported systems for your flake packages, shell, etc.
       systems = [
-        # "aarch64-linux"
+        "aarch64-linux"
         "x86_64-linux"
       ];
 
@@ -74,7 +74,8 @@
 
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#your-hostname'
-      nixosConfigurations = host_helper "crocoite"; # // (host_helper example);
+      nixosConfigurations = host_helper "crocoite" # // (host_helper example);
+                         // host_helper "factorio";
 
       ## Standalone home-manager configuration entrypoint
       ## Available through 'home-manager --flake .#your-username@your-hostname'
