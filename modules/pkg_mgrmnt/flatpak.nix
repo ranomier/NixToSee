@@ -57,7 +57,7 @@
     {
       origin = "flathub";
       appId = "io.github.Soundux";
-    } # More usable discord for linux
+    } # soundboard
 
     #"com.obsproject.Studio" #this is another way to write it
   ];
