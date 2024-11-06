@@ -74,8 +74,9 @@
 
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#your-hostname'
-      nixosConfigurations = host_helper "crocoite" # // (host_helper example);
-                         // host_helper "factorio";
+      nixosConfigurations =
+        host_helper "crocoite" # // (host_helper example);
+        // host_helper "factorio";
 
       ## Standalone home-manager configuration entrypoint
       ## Available through 'home-manager --flake .#your-username@your-hostname'

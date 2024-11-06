@@ -63,6 +63,7 @@
       keepassxc
       #minecraft
       element-desktop
+      rustdesk-flutter
     ];
 
   fonts.packages = with pkgs; [
