@@ -43,6 +43,7 @@
       htop
       ncdu
       wget
+      unstable.yt-dlp
       miniserve
       file
       unzip
