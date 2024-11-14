@@ -65,6 +65,7 @@
       #minecraft
       element-desktop
       rustdesk-flutter
+      timer
     ];
 
   fonts.packages = with pkgs; [
