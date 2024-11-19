@@ -3,18 +3,14 @@
   programs.firejail = {
     enable = true;
     wrappedBinaries = {
-      firefox = {
-        executable = "${pkgs.firefox}/bin/firefox";
-        profile = "${pkgs.firejail}/etc/firejail/firefox.profile";
+      nuclear = {
+        executable = "${pkgs.nuclear}/bin/nuclear";
+        profile = "${pkgs.firejail}/etc/firejail/nuclear.profile";
         extraArgs = [
-          # Required for U2F USB stick
-          "--ignore=private-dev"
           # Enforce dark mode
           "--env=GTK_THEME=Adwaita:dark"
           # Enable system notifications
           "--dbus-user.talk=org.freedesktop.Notifications"
-          # For screen sharing
-          "--dbus-user.talk=org.freedesktop.portal.*"
         ];
       };
 
@@ -33,14 +29,33 @@
         ];
       };
 
-      nuclear = {
-        executable = "${pkgs.nuclear}/bin/nuclear";
-        profile = "${pkgs.firejail}/etc/firejail/nuclear.profile";
+      firefox = {
+        executable = "${pkgs.firefox}/bin/firefox";
+        profile = "${pkgs.firejail}/etc/firejail/firefox.profile";
         extraArgs = [
+          # Required for U2F USB stick
+          "--ignore=private-dev"
           # Enforce dark mode
           "--env=GTK_THEME=Adwaita:dark"
           # Enable system notifications
           "--dbus-user.talk=org.freedesktop.Notifications"
+          # For screen sharing
+          "--dbus-user.talk=org.freedesktop.portal.*"
+        ];
+      };
+
+      nyxt = {
+        executable = "${pkgs.nyxt}/bin/nyxt";
+        profile = "${pkgs.firejail}/etc/firejail/chromium-browser.profile";
+        extraArgs = [
+          # Required for U2F USB stick
+          "--ignore=private-dev"
+          # Enforce dark mode
+          "--env=GTK_THEME=Adwaita:dark"
+          # Enable system notifications
+          "--dbus-user.talk=org.freedesktop.Notifications"
+          # For screen sharing
+          "--dbus-user.talk=org.freedesktop.portal.*"
         ];
       };
 

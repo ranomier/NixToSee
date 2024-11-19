@@ -87,5 +87,6 @@
 
     ../../modules/software/browser/firefox.nix
     ../../modules/software/browser/brave.nix
+    ../../modules/software/browser/nyxt.nix
   ];
 }
