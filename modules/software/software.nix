@@ -53,7 +53,7 @@
       home-manager
 
       # move to homemanager?
-      mumble
+      unstable.mumble
       amberol_wrapper
       amberol
       nuclear
