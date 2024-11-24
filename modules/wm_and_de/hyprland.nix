@@ -58,7 +58,7 @@
     pamixer
     waybar
     hyprpaper
-    kanshi
+    unstable.kanshi
     dunst
 
     # audio
