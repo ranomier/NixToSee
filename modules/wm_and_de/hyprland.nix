@@ -83,6 +83,6 @@
     lxqt.lxqt-policykit
 
     # file manager
-    gnome.nautilus
+    nautilus
   ];
 }

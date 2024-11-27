@@ -49,6 +49,7 @@
       ripgrep
       qemu
       home-manager
+      dfc
 
       # move to homemanager?
       unstable.mumble
@@ -62,13 +63,13 @@
       keepassxc
       #minecraft
       element-desktop
-      rustdesk-flutter
+      rustdesk
       timer
     ];
 
   fonts.packages = with pkgs; [
     noto-fonts
-    noto-fonts-cjk
+    noto-fonts-cjk-sans
     noto-fonts-emoji
     liberation_ttf
     dina-font

@@ -2,9 +2,10 @@
   ######
   inputs = {
     ######
+    #nixpkgs-old.url = "github:NixOS/nixpkgs/nixos-24.05";
 
     # Main nix package repository
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
 
     # NixOS unstable channel
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
