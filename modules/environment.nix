@@ -1,12 +1,4 @@
 {pkgs, ...}: {
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.ranomier = {
-    isNormalUser = true;
-    description = "Ranomier";
-    extraGroups = ["networkmanager" "wheel"];
-    #packages = with pkgs; [];
-  };
-
   environment.etc = {
     "xdg/user-dirs.defaults".text = ''
       DESKTOP=Desktop
@@ -37,21 +29,5 @@
   # XDG-USER-DIR package and config
   environment.systemPackages = with pkgs; [
     xdg-user-dirs
-
-    apparmor-pam
-    apparmor-utils
-    apparmor-parser
-    apparmor-profiles
-    roddhjav-apparmor-rules
   ];
-
-  security.apparmor.enable = true;
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
 }

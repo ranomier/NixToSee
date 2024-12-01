@@ -62,6 +62,9 @@
     ../../modules/locale.nix
     ../../modules/networking.nix
     ../../modules/boot_theming.nix
+    ../../modules/environment.nix
+
+    ../../modules/users/ranomier.nix
 
     ../../modules/specific_hardware/scan_and_print.nix
     ../../modules/specific_hardware/fwupd.nix
@@ -69,7 +72,7 @@
 
     ../../modules/sec_auth/firejail.nix
     ../../modules/sec_auth/login-manager.nix
-    ../../modules/sec_auth/users_and_permissions.nix
+    ../../modules/sec_auth/apparmor.nix
     ../../modules/sec_auth/ssh.nix
 
     ../../modules/software/software.nix
@@ -77,6 +80,7 @@
     ../../modules/software/game.nix
     ../../modules/software/audio_video.nix
     ../../modules/software/obs-studio.nix
+    ../../modules/software/shell.nix
 
     ../../modules/wm_and_de/hyprland.nix
 
