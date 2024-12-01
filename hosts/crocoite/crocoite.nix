@@ -59,42 +59,21 @@
     ./hardware-configuration.nix
     ./boot.nix
 
-    ../../modules/locale.nix
-    ../../modules/networking.nix
-    ../../modules/boot_theming.nix
-    ../../modules/environment.nix
+    ../../modules
 
-    ../../modules/users/ranomier.nix
+    ../../modules/users
 
-    ../../modules/specific_hardware/scan_and_print.nix
-    ../../modules/specific_hardware/fwupd.nix
-    ../../modules/specific_hardware/bluetooth.nix
+    ../../modules/specific_hardware
 
-    ../../modules/sec_auth/firejail.nix
-    ../../modules/sec_auth/login-manager.nix
-    ../../modules/sec_auth/apparmor.nix
-    ../../modules/sec_auth/ssh.nix
+    ../../modules/sec_auth
 
-    ../../modules/software/software.nix
-    ../../modules/software/virt.nix
-    ../../modules/software/game.nix
-    ../../modules/software/audio_video.nix
-    ../../modules/software/obs-studio.nix
-    ../../modules/software/shell.nix
-    ../../modules/software/flatpak.nix
+    ../../modules/software
+    ../../modules/software/browser
+    ../../modules/software/nix-helper
 
-    ../../modules/wm_and_de/hyprland.nix
+    ../../modules/wm_and_de
 
-    ../../modules/pkg_mgrmnt/flatpak.nix
-    ../../modules/pkg_mgrmnt/podman.nix
-    ../../modules/pkg_mgrmnt/store_pkg_file.nix
+    ../../modules/pkg_mgrmnt
 
-    ../../modules/software/nix-helper/index.nix
-    #../../modules/software/nix-helper/doc.nix
-    ../../modules/software/nix-helper/nix-ld.nix
-
-    ../../modules/software/browser/firefox.nix
-    ../../modules/software/browser/brave.nix
-    ../../modules/software/browser/nyxt.nix
   ];
 }
