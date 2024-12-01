@@ -81,6 +81,7 @@
     ../../modules/software/audio_video.nix
     ../../modules/software/obs-studio.nix
     ../../modules/software/shell.nix
+    ../../modules/software/flatpak.nix
 
     ../../modules/wm_and_de/hyprland.nix
 
