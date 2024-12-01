@@ -3,6 +3,8 @@
   inputs,
   ...
 }: {
+  networking.hostName = "crocoite"; # Define your hostname.
+
   #MANPAGER='nvim +Man!'
 
   # This value determines the NixOS release from which the default
@@ -12,9 +14,6 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
-  # Allow unfree packages
-  #unstable.config.allowUnfree = true;
 
   #nixpkgs.overlays = [ overlays.unstable-packages ];
   nixpkgs = {
@@ -41,14 +40,18 @@
       allowUnfree = true;
     };
   };
-  networking.hostName = "crocoite"; # Define your hostname.
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix = {
+    settings.experimental-features = ["nix-command" "flakes"];
 
-  # https://lix.systems/ Lix is a modern, delicious implementation of the Nix package manager,
-  # focused on correctness, usability, and growth –
-  # and committed to doing right by its community.
-  nix.package = pkgs.lix;
+    # https://lix.systems/ Lix is a modern, delicious implementation of the Nix package manager,
+    # focused on correctness, usability, and growth –
+    # and committed to doing right by its community.
+    package = pkgs.lix;
+
+    channel.enable = false;
+  };
+
   imports = [
     inputs.nix-flatpak.nixosModules.nix-flatpak
 
