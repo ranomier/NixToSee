@@ -63,7 +63,7 @@
       keepassxc
       #minecraft
       element-desktop
-      rustdesk
+      rustdesk-flutter
       timer
     ];
 

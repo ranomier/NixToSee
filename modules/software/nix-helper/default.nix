@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   imports = [
     #./doc.nix
     ./index.nix

@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   services.flatpak = {
     enable = true;
     update.auto = {
@@ -18,6 +18,5 @@
         location = "https://flathub.org/beta-repo/flathub-beta.flatpakrepo";
       }
     ];
-
   };
 }

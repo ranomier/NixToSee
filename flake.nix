@@ -7,13 +7,13 @@
     # Main nix package repository
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
 
-    # NixOS unstable channel
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # NixOS unstable channel
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # ready made hardware configurations. e.G.: Power saving
     nixos-hardware = {

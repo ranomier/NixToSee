@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   imports = [
     ./boot_theming.nix
     ./environment.nix

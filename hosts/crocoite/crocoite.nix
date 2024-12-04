@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  modulesPath,
   ...
 }: {
   networking.hostName = "crocoite"; # Define your hostname.
@@ -53,6 +54,9 @@
   };
 
   imports = [
+    # steam and other stuff seems to depend on perl
+    #"${modulesPath}/profiles/perlless.nix"
+
     inputs.nix-flatpak.nixosModules.nix-flatpak
 
     #nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
@@ -74,6 +78,5 @@
     ../../modules/wm_and_de
 
     ../../modules/pkg_mgrmnt
-
   ];
 }
