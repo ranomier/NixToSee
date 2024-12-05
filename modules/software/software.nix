@@ -50,6 +50,7 @@
       qemu
       home-manager
       dfc
+      p7zip
 
       # move to homemanager?
       unstable.mumble
