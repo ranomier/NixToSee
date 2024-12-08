@@ -7,5 +7,6 @@
     ./shell.nix
     ./software.nix
     ./virt.nix
+    ./android.nix
   ];
 }
