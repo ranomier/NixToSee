@@ -1,6 +1,5 @@
 {
   pkgs,
-  lib,
   ...
 }: {
   # Configure network proxy if necessary
