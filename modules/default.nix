@@ -1,6 +1,7 @@
 {...}: {
   imports = [
-    #./boot_theming.nix
+    #./plymouth.nix
+    ./customisation.nix
     ./environment.nix
     ./locale.nix
     ./networking.nix
