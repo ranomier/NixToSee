@@ -59,7 +59,8 @@
       nuclear
       mpv
       zathura
-      feh
+      #feh
+      nomacs
       #unstable.obsidian
       keepassxc
       #minecraft
