@@ -67,7 +67,7 @@
 
     ../../modules/users
 
-    ../../modules/specific_hardware
+    ../../modules/hardware
 
     ../../modules/sec_auth
 
