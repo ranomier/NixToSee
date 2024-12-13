@@ -54,5 +54,7 @@
     easyeffects
     pwvucontrol
     lxqt.pavucontrol-qt
+
+    roc-toolkit
   ];
 }
