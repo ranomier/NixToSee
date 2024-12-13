@@ -1,8 +1,8 @@
-{ ... }: {
+{...}: {
   nix = {
     optimise = {
       automatic = true;
-      dates = [ "16:00" "08:00" ];
+      dates = ["16:00" "08:00"];
     };
     gc = {
       automatic = true;
