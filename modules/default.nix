@@ -5,5 +5,6 @@
     ./environment.nix
     ./locale.nix
     ./networking.nix
+    ./firewall.nix
   ];
 }

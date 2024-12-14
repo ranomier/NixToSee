@@ -28,11 +28,6 @@
   # networking.interfaces.enp2s0f0.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp5s0.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp3s0.useDHCP = lib.mkDefault true;
-  # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [8080 10001 10002];
-  networking.firewall.allowedUDPPorts = [8080 10001 10002];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   environment.systemPackages = with pkgs; [
     networkmanagerapplet
