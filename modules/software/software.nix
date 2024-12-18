@@ -46,6 +46,7 @@
       file
       unzip
       tmux
+      fzf
       ripgrep
       qemu
       home-manager
