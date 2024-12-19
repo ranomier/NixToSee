@@ -50,10 +50,12 @@
   };
   environment.systemPackages = with pkgs; [
     helvum
-    qpwgraph
-    easyeffects
     pwvucontrol
     lxqt.pavucontrol-qt
+
+    qpwgraph
+    easyeffects
+    non
 
     roc-toolkit
   ];
