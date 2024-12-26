@@ -60,6 +60,7 @@
       nuclear
       mpv
       zathura
+      libreoffice
       #feh
       nomacs
       #unstable.obsidian
