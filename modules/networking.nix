@@ -5,20 +5,20 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  networking.networkmanager.wifi.backend = "iwd";
+  #networking.networkmanager.wifi.backend = "iwd";
 
   systemd.network.wait-online.enable = false;
   boot.initrd.systemd.network.wait-online.enable = false;
 
-  networking.wireless.iwd.enable = true;
-  networking.wireless.iwd.settings = {
-    IPv6 = {
-      Enabled = true;
-    };
-    Settings = {
-      AutoConnect = true;
-    };
-  };
+  #networking.wireless.iwd.enable = true;
+  #networking.wireless.iwd.settings = {
+  #  IPv6 = {
+  #    Enabled = true;
+  #  };
+  #  Settings = {
+  #    AutoConnect = true;
+  #  };
+  #};
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
