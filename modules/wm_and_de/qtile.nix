@@ -23,8 +23,7 @@
       });
     })
   ];
-
-  services.xserver.displayManager.sessionPackages = [pkgs.qtile-unwrapped];
+  services.displayManager.sessionPackages = [pkgs.qtile-unwrapped];
   services.xserver.windowManager.qtile.enable = true;
 
   # for mounting stuff, also needs a auth agent like lxqt.lxqt-policykit
