@@ -72,6 +72,8 @@
       rtl-sdr
       gqrx
     ];
+  hardware.rtl-sdr.enable = true;
+  users.users."ranomier".extraGroups = ["plugdev"];
 
   fonts.packages = with pkgs; [
     noto-fonts
