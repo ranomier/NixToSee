@@ -69,6 +69,8 @@
       element-desktop
       rustdesk-flutter
       timer
+      rtl-sdr
+      gqrx
     ];
 
   fonts.packages = with pkgs; [

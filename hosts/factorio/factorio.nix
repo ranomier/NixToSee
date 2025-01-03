@@ -37,7 +37,7 @@
   # https://lix.systems/ Lix is a modern, delicious implementation of the Nix package manager,
   # focused on correctness, usability, and growth –
   # and committed to doing right by its community.
-  nix.package = pkgs.lix;
+  #nix.package = pkgs.lix;
   imports = [
     #nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
     #./hardware-configuration.nix
@@ -45,6 +45,26 @@
     ./hardware-configuration.nix
 
     ../../modules/locale.nix
-    ../../modules/game/server/factorio/factorio.nix
+    #../../modules/game/server/factorio/factorio.nix
+
+    <nixpkgs/nixos/modules/profiles/perlless.nix>
+    <nixpkgs/nixos/modules/profiles/headless.nix>
+    <nixpkgs/nixos/modules/profiles/minimal.nix>
+
+    {
+      programs.command-not-found.enable = false;
+      environment.defaultPackages = [];
+      xdg = {
+        icons.enable = false;
+        mime.enable = false;
+        sounds.enable = false;
+      };
+      documentation.man.enable = false;
+      documentation.nixos.enable = false;
+    }
+  ];
+  disabledModules = [
+    <nixpkgs/nixos/modules/profiles/all-hardware.nix>
+    <nixpkgs/nixos/modules/profiles/base.nix>
   ];
 }

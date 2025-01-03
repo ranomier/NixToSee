@@ -12,18 +12,20 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # generating filesystems in different formats
+    nixos-generators = {
+      url = "github:nix-community/nixos-generators";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # NixOS unstable channel
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # ready made hardware configurations. e.G.: Power saving
-    nixos-hardware = {
-      url = "github:NixOS/nixos-hardware/master";
-    };
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     # for managing flatpaks, like which ones are installed and which not
-    nix-flatpak = {
-      url = "github:gmodena/nix-flatpak";
-    };
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
   #######
