@@ -59,7 +59,8 @@
       amberol
       nuclear
       mpv
-      zathura
+      #zathura
+      sioyek
       libreoffice
       #feh
       nomacs
