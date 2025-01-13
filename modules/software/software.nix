@@ -58,7 +58,6 @@
       amberol_wrapper
       amberol
       nuclear
-      mpv
       #zathura
       sioyek
       libreoffice
@@ -70,6 +69,7 @@
       element-desktop
       rustdesk-flutter
       timer
+      prusa-slicer
     ];
 
   fonts.packages = with pkgs; [
