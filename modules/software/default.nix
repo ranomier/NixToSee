@@ -8,6 +8,6 @@
     ./software.nix
     ./virt.nix
     ./android.nix
-    ./mpv.nix
+    #./mpv.nix
   ];
 }
