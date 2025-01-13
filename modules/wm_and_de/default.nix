@@ -1,7 +1,7 @@
 {...}: {
   imports = [
     ./hyprland.nix
-    ./qtile.nix
+    #./qtile.nix
     ./components/dbus.nix
   ];
 }

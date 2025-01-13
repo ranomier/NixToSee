@@ -38,6 +38,7 @@
       nixpkgs-unstable,
       nix-flatpak,
       home-manager,
+      nixos-generators,
       ...
     } @ inputs: let
       # Supported systems for your flake packages, shell, etc.
@@ -70,7 +71,7 @@
       overlays = import ./overlays {inherit inputs;};
       # Reusable nixos modules you might want to export
       # These are usually stuff you would upstream into nixpkgs
-      nixosModules = import ./modules/nixos;
+      #nixosModules = import ./modules/nixos;
       # Reusable home-manager modules you might want to export
       # These are usually stuff you would upstream into home-manager
       homeManagerModules = import ./modules/home-manager;
@@ -78,8 +79,7 @@
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#your-hostname'
       nixosConfigurations =
-        host_helper "crocoite" # // (host_helper example);
-        // host_helper "factorio";
+        host_helper "crocoite"; # // (host_helper example);
 
       ## Standalone home-manager configuration entrypoint
       ## Available through 'home-manager --flake .#your-username@your-hostname'
@@ -94,5 +94,33 @@
       #    ];
       #  };
       #};
+
+      packages.x86_64-linux = {
+        factorio = nixos-generators.nixosGenerate {
+          system = "x86_64-linux";
+          modules = [
+            # you can include your own nixos configuration here, i.e.
+            #./hosts/factorio/factorio.nix
+          ];
+
+          customFormats = {
+            "myFormat" = {
+              lib,
+              modulesPath,
+              ...
+            }: {
+              imports = [
+                "${toString modulesPath}/virtualisation/proxmox-lxc.nix"
+              ];
+              boot.loader.grub.enable = lib.mkForce false;
+              boot.loader.systemd-boot.enable = lib.mkForce false;
+              formatAttr = "tarball";
+              fileExtension = "asd.tar.xz";
+            };
+          };
+          format = "myFormat";
+          #format = "vmware";
+        };
+      };
     };
 }

@@ -1,3 +1,6 @@
 {...}: {
-  services.speechd.enable = true;
+  services = {
+    speechd.enable = true;
+    orca.enable = true;
+  };
 }

@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
@@ -47,9 +51,9 @@
     ../../modules/locale.nix
     #../../modules/game/server/factorio/factorio.nix
 
-    <nixpkgs/nixos/modules/profiles/perlless.nix>
-    <nixpkgs/nixos/modules/profiles/headless.nix>
-    <nixpkgs/nixos/modules/profiles/minimal.nix>
+    #<nixpkgs/nixos/modules/profiles/perlless.nix>
+    #<nixpkgs/nixos/modules/profiles/headless.nix>
+    #<nixpkgs/nixos/modules/profiles/minimal.nix>
 
     {
       programs.command-not-found.enable = false;
@@ -61,10 +65,16 @@
       };
       documentation.man.enable = false;
       documentation.nixos.enable = false;
+      # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
+      # (the default) this is the recommended approach. When using systemd-networkd it's
+      # still possible to use this option, but it's recommended to use it in conjunction
+      # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
+      networking.useDHCP = lib.mkDefault true;
+      # networking.interfaces.ens18.useDHCP = lib.mkDefault true;
     }
   ];
-  disabledModules = [
-    <nixpkgs/nixos/modules/profiles/all-hardware.nix>
-    <nixpkgs/nixos/modules/profiles/base.nix>
-  ];
+  #disabledModules = [
+  #  <nixpkgs/nixos/modules/profiles/all-hardware.nix>
+  #  <nixpkgs/nixos/modules/profiles/base.nix>
+  #];
 }
