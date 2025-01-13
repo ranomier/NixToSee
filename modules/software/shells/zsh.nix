@@ -1,4 +1,4 @@
-{ ... }:{
+{...}: {
   system.userActivationScripts.zshrc = "touch .zshrc";
 
   programs.zsh = {
