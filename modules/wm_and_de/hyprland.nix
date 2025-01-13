@@ -52,6 +52,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    hyprsunset
+    hyprpolkitagent
+    hyprutils
     # for tiling window manager
     foot
     foot.themes
