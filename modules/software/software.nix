@@ -4,73 +4,66 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = let
-    amberol_wrapper = pkgs.writeShellScriptBin "amberol" ''
-      export GDK_BACKEND='x11'
-      exec "${pkgs.amberol}/bin/amberol" "$@"
-    '';
-  in
-    with pkgs; [
-      # low level stuff
-      efibootmgr
-      #exfat
-      exfatprogs
-      greetd.greetd
-      greetd.tuigreet
-      killall
-      vulnix
+  environment.systemPackages = with pkgs; [
+    # low level stuff
+    efibootmgr
+    #exfat
+    exfatprogs
+    greetd.greetd
+    greetd.tuigreet
+    killall
+    vulnix
 
-      # hardware
-      brightnessctl
-      usbutils
-      lm_sensors
+    # hardware
+    brightnessctl
+    usbutils
+    lm_sensors
 
-      unstable.neovim
-      git
-      gnumake
-      gcc
-      nodePackages.npm
-      nodejs-slim
-      python3
-      fd
-      nodejs-slim
-      cargo
-      rustc
+    unstable.neovim
+    git
+    gnumake
+    gcc
+    nodePackages.npm
+    nodejs-slim
+    python3
+    fd
+    nodejs-slim
+    cargo
+    rustc
 
-      # tooling
-      htop
-      ncdu
-      wget
-      unstable.yt-dlp
-      miniserve
-      file
-      unzip
-      tmux
-      fzf
-      ripgrep
-      qemu
-      home-manager
-      dfc
-      p7zip
+    # tooling
+    htop
+    ncdu
+    wget
+    unstable.yt-dlp
+    miniserve
+    file
+    unzip
+    tmux
+    fzf
+    ripgrep
+    qemu
+    home-manager
+    dfc
+    p7zip
 
-      # move to homemanager?
-      unstable.mumble
-      amberol_wrapper
-      amberol
-      nuclear
-      #zathura
-      sioyek
-      libreoffice
-      #feh
-      nomacs
-      #unstable.obsidian
-      keepassxc
-      #minecraft
-      element-desktop
-      rustdesk-flutter
-      timer
-      prusa-slicer
-    ];
+    # move to homemanager?
+    unstable.mumble
+    amberol
+    nuclear
+    #zathura
+    sioyek
+    libreoffice
+    #feh
+    nomacs
+    #unstable.obsidian
+    keepassxc
+    #minecraft
+    element-desktop
+    rustdesk-flutter
+    timer
+    prusa-slicer
+  ];
 
   fonts.packages = with pkgs; [
     noto-fonts
