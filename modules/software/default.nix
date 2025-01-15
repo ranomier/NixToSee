@@ -9,5 +9,6 @@
     ./virt.nix
     ./android.nix
     #./mpv.nix
+    ./neovim.nix
   ];
 }
