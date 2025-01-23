@@ -2,7 +2,7 @@
   services.flatpak = {
     enable = true;
     update.auto = {
-      enable = false;
+      enable = true;
       onCalendar = "weekly";
     };
     uninstallUnmanaged = true;
