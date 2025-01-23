@@ -100,7 +100,7 @@
           system = "x86_64-linux";
           modules = [
             # you can include your own nixos configuration here, i.e.
-            #./hosts/factorio/factorio.nix
+            ./hosts/factorio/factorio.nix
           ];
 
           customFormats = {
