@@ -1,7 +1,8 @@
-{ pkgs
-, lib
-, modulesPath
-, ...
+{
+  pkgs,
+  lib,
+  modulesPath,
+  ...
 }: {
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -13,10 +14,10 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   nixpkgs.config = {
-      # Disable if you don't want unfree packages
-      allowUnfree = true;
+    # Disable if you don't want unfree packages
+    allowUnfree = true;
   };
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # https://lix.systems/ Lix is a modern, delicious implementation of the Nix package manager,
   # focused on correctness, usability, and growth –
@@ -35,13 +36,12 @@
     (modulesPath + "/profiles/perlless.nix")
     (modulesPath + "/profiles/minimal.nix")
     {
-      environment.defaultPackages = [ ]; 
+      environment.defaultPackages = [];
       boot.kernel.enable = false;
       boot.isContainer = true;
-      nixpkgs.overlays = [ (self: super: {}) ];
+      nixpkgs.overlays = [(self: super: {})];
     }
     {
-
       # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
       # (the default) this is the recommended approach. When using systemd-networkd it's
       # still possible to use this option, but it's recommended to use it in conjunction
@@ -53,7 +53,7 @@
   disabledModules = [
     (modulesPath + "/profiles/all-hardware.nix")
     (modulesPath + "/profiles/base.nix")
-  #  <nixpkgs/nixos/modules/profiles/all-hardware.nix>
-  #  <nixpkgs/nixos/modules/profiles/base.nix>
+    #  <nixpkgs/nixos/modules/profiles/all-hardware.nix>
+    #  <nixpkgs/nixos/modules/profiles/base.nix>
   ];
 }
