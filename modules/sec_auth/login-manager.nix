@@ -1,8 +1,6 @@
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   default_command = "Hyprland";
-in
-{
+in {
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
   services.greetd = {
