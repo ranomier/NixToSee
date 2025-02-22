@@ -45,6 +45,12 @@
         appId = "io.github.Soundux";
       } # soundboard
 
+      # games
+      {
+        origin = "flathub";
+        appId = "com.etlegacy.ETLegacy";
+      } # shooter
+
       #"com.obsproject.Studio" #this is another way to write it
     ];
   };
