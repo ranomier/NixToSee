@@ -73,6 +73,7 @@
     ../../modules/software/browser
     ../../modules/software/nix-helper
     ../../modules/software/shells
+    ../../modules/software/office
 
     ../../modules/wm_and_de
 

@@ -53,7 +53,6 @@
     nuclear
     #zathura
     sioyek
-    libreoffice
     #feh
     nomacs
     #unstable.obsidian
