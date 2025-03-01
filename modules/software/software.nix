@@ -33,6 +33,7 @@
 
     # tooling
     htop
+    btop
     ncdu
     wget
     unstable.yt-dlp
