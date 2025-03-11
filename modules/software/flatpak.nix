@@ -17,7 +17,6 @@
         origin = "flathub";
         appId = "com.github.hugolabe.Wike";
       } # Wikpedia, but in nice
-      #{ origin = "flathub";   appId = "com.jeffser.Alpaca"; }          # Local chat AI
       {
         origin = "flathub";
         appId = "io.gpt4all.gpt4all";
@@ -50,6 +49,10 @@
         origin = "flathub";
         appId = "com.etlegacy.ETLegacy";
       } # shooter
+      {
+        origin = "flathub";
+        appId = "org.js.nuclear.Nuclear";
+      }
 
       #"com.obsproject.Studio" #this is another way to write it
     ];
