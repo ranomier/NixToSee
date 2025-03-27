@@ -78,5 +78,7 @@
     ../../modules/wm_and_de
 
     ../../modules/pkg_mgrmnt
+
+    ../../tests/glitchtip-container.nix
   ];
 }
