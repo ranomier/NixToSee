@@ -19,7 +19,7 @@
     };
 
     # NixOS unstable channel
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixos-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     # ready made hardware configurations. e.G.: Power saving
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
@@ -35,7 +35,7 @@
       self,
       nixpkgs,
       nixos-hardware,
-      nixpkgs-unstable,
+      nixos-unstable,
       nix-flatpak,
       home-manager,
       nixos-generators,
@@ -53,7 +53,7 @@
 
       host_helper = hostname: {
         ${hostname} = nixpkgs.lib.nixosSystem {
-          specialArgs = {inherit inputs;};
+          specialArgs = {inherit inputs;} // {inherit nixos-unstable;};
           modules = [
             ./hosts/${hostname}/${hostname}.nix
           ];
