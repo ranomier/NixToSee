@@ -1,8 +1,9 @@
-{ pkgs
-, inputs
-, modulesPath
-, nixos-unstable
-, ...
+{
+  pkgs,
+  inputs,
+  modulesPath,
+  nixos-unstable,
+  ...
 }: {
   networking.hostName = "crocoite"; # Define your hostname.
 
@@ -41,7 +42,7 @@
   };
 
   nix = {
-    settings.experimental-features = [ "nix-command" "flakes" ];
+    settings.experimental-features = ["nix-command" "flakes"];
 
     # https://lix.systems/ Lix is a modern, delicious implementation of the Nix package manager,
     # focused on correctness, usability, and growth –
@@ -52,34 +53,33 @@
   };
 
   imports = [
-      # steam and other stuff seems to depend on perl
-      #"${modulesPath}/profiles/perlless.nix"
+    # steam and other stuff seems to depend on perl
+    #"${modulesPath}/profiles/perlless.nix"
 
+    inputs.nix-flatpak.nixosModules.nix-flatpak
 
-      inputs.nix-flatpak.nixosModules.nix-flatpak
+    #nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
+    ./hardware-configuration.nix
+    ./boot.nix
 
-      #nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
-      ./hardware-configuration.nix
-      ./boot.nix
+    ../../modules
 
-      ../../modules
+    ../../modules/users
 
-      ../../modules/users
+    ../../modules/hardware
 
-      ../../modules/hardware
+    ../../modules/sec_auth
 
-      ../../modules/sec_auth
+    ../../modules/software
+    ../../modules/software/browser
+    ../../modules/software/nix-helper
+    ../../modules/software/shells
+    ../../modules/software/office
 
-      ../../modules/software
-      ../../modules/software/browser
-      ../../modules/software/nix-helper
-      ../../modules/software/shells
-      ../../modules/software/office
+    ../../modules/wm_and_de
 
-      ../../modules/wm_and_de
+    ../../modules/pkg_mgrmnt
 
-      ../../modules/pkg_mgrmnt
-
-      # ../../tests
-    ];
+    # ../../tests
+  ];
 }

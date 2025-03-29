@@ -51,6 +51,7 @@
     # move to homemanager?
     unstable.mumble
     amberol
+    mpv
     nuclear
     #zathura
     sioyek
