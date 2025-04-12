@@ -1,4 +1,4 @@
-{...}: {
+{
   imports = [
     ./audio_video.nix
     ./flatpak.nix

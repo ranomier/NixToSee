@@ -1,4 +1,4 @@
-{...}: {
+{
   nix = {
     optimise = {
       automatic = true;

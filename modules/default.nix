@@ -1,4 +1,4 @@
-{...}: {
+{
   imports = [
     #./plymouth.nix
     ./accessibility.nix
