@@ -1,9 +1,4 @@
 {pkgs, ...}: {
-  # also opens the TCP and UDP port from 1714 to 1764
-  programs.kdeconnect.enable = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     # low level stuff
     efibootmgr
