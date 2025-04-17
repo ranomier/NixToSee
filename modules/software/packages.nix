@@ -42,6 +42,7 @@
     home-manager
     dfc
     p7zip
+    sops
 
     # move to homemanager?
     unstable.mumble
