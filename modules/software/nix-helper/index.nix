@@ -4,6 +4,7 @@
 
   environment.systemPackages = with pkgs; [
     nix-index
+    comma
   ];
 
   programs.nix-index = {
