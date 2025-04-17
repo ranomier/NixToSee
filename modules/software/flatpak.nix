@@ -25,6 +25,10 @@
         origin = "flathub";
         appId = "md.obsidian.Obsidian";
       } # note taking and brain organising
+      {
+        origin = "flathub";
+        appId = "com.parsecgaming.parsec";
+      } # remote dekstop
 
       # messenger
       {
