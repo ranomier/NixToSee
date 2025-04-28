@@ -59,6 +59,6 @@
     element-desktop
     rustdesk-flutter
     timer
-    prusa-slicer
+    unstable.prusa-slicer
   ];
 }
