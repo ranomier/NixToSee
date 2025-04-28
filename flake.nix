@@ -24,5 +24,5 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
-  outputs = {...}@inArgs: import ./outputs.nix inArgs;
+  outputs = inArgs: import ./outputs.nix inArgs;
 }
