@@ -4,6 +4,7 @@
   modulesPath,
   ...
 }: {
+  #networking.hostName = "jitsi"; # Define your hostname.
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
@@ -24,13 +25,9 @@
   nix.package = pkgs.lix;
 
   imports = [
-    #nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
-    #./hardware-configuration.nix
-    #./boot.nix
-    #./hardware-configuration.nix
+    ./hardware-configuration.nix
 
     ../../modules/locale.nix
-    #../../modules/game/server/factorio/factorio.nix
 
     (modulesPath + "/profiles/perlless.nix")
     (modulesPath + "/profiles/minimal.nix")
