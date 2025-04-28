@@ -1,11 +1,11 @@
 {
   pkgs,
-  inputs,
+  inArgs,
   modulesPath,
   nixos-unstable,
   ...
 }: {
-  networking.hostName = "crocoite"; # Define your hostname.
+  #networking.hostName = "crocoite"; # Define your hostname.
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -18,7 +18,7 @@
   #nixpkgs.overlays = [ overlays.unstable-packages ];
   nixpkgs = {
     # You can add overlays here
-    overlays = with inputs.self.overlays; [
+    overlays = with inArgs.self.overlays; [
       # Add overlays your own flake exports (from overlays and pkgs dir):
       #additions
       #modifications
@@ -56,7 +56,7 @@
     # steam and other stuff seems to depend on perl
     #"${modulesPath}/profiles/perlless.nix"
 
-    inputs.nix-flatpak.nixosModules.nix-flatpak
+    inArgs.nix-flatpak.nixosModules.nix-flatpak
 
     #nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
     ./hardware-configuration.nix
