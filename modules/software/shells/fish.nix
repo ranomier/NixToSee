@@ -11,5 +11,4 @@
     direnv.enableFishIntegration = true;
     foot.enableFishIntegration = true;
   };
-  environment.systemPackages = [pkgs.starship];
 }

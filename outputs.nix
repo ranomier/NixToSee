@@ -9,15 +9,17 @@ inArgs: let
   # pass to it, with each system as an argument
   forAllSystems = inArgs.nixpkgs.lib.genAttrs systems;
 
+  lib = inArgs.nixpkgs.lib;
+
   hostHelper = import ./hostHelper.nix inArgs;
 
 in {
   # NixOS configuration entrypoint
   # Available through 'nixos-rebuild --flake .#your-hostname'
   # to add more append // (host_helper example);
-
-  nixosConfigurations =
-    (hostHelper "crocoite"); #// (host_helper2 "jitsi");
+  nixosConfigurations = builtins.mapAttrs (name: options: (hostHelper name)) {
+    crocoite = {};
+  };
 
   # Your custom packages
   # Accessible through 'nix build', 'nix shell', etc
@@ -33,4 +35,6 @@ in {
   # Formatter for your nix files, available through 'nix fmt'
   # Other options beside 'alejandra' include 'nixpkgs-fmt'
   formatter = forAllSystems (system: inArgs.nixpkgs.legacyPackages.${system}.alejandra);
+
+  #checks = forAllSystems (system: inArgs(hostHelper "crocoite").system.build.toplevel);
 }

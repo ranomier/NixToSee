@@ -10,7 +10,6 @@
     ./obs-studio.nix
     ./packages.nix
     ./programs.nix
-    ./shell.nix
     ./virt.nix
   ];
 }
