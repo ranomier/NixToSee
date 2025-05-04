@@ -19,6 +19,7 @@ in {
   # to add more append // (host_helper example);
   nixosConfigurations = builtins.mapAttrs (hostName: hostOptions: (hostHelper hostName hostOptions)) {
     crocoite = {};
+    game-luanti = {unstable = true;};
   };
 
   # Your custom packages

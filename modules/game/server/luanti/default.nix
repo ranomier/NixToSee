@@ -1,0 +1,5 @@
+{...}: {
+  services.minetest = {
+    enable = true;
+  };
+}
