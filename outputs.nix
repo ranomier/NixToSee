@@ -15,9 +15,10 @@ in {
   # NixOS configuration entrypoint
   # Available through 'nixos-rebuild --flake .#your-hostname'
   nixosConfigurations = builtins.mapAttrs (hostName: hostOptions: (hostHelper hostName hostOptions)) {
-    crocoite = {};
-    game-luanti = {unstable = true;};
-    #jitsi = {};
+    crocoite = {stateVersion = "24.05";};
+
+    jitsi = {stateVersion = "24.11";};
+    game-luanti = {stateVersion = "25.05"; unstable = true;};
   };
 
 
