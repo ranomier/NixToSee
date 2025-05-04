@@ -17,7 +17,7 @@ in {
   # NixOS configuration entrypoint
   # Available through 'nixos-rebuild --flake .#your-hostname'
   # to add more append // (host_helper example);
-  nixosConfigurations = builtins.mapAttrs (name: options: (hostHelper name)) {
+  nixosConfigurations = builtins.mapAttrs (hostName: hostOptions: (hostHelper hostName hostOptions)) {
     crocoite = {};
   };
 
