@@ -1,26 +1,25 @@
 inArgs: let
+  lib = inArgs.nixpkgs.lib;
+  hostHelper = import ./hostHelper.nix inArgs;
+
   # Supported systems for your flake packages, shell, etc.
   systems = [
     #"aarch64-linux"
     "x86_64-linux"
   ];
-
   # This is a function that generates an attribute by calling a function you
   # pass to it, with each system as an argument
   forAllSystems = inArgs.nixpkgs.lib.genAttrs systems;
 
-  lib = inArgs.nixpkgs.lib;
-
-  hostHelper = import ./hostHelper.nix inArgs;
-
 in {
   # NixOS configuration entrypoint
   # Available through 'nixos-rebuild --flake .#your-hostname'
-  # to add more append // (host_helper example);
   nixosConfigurations = builtins.mapAttrs (hostName: hostOptions: (hostHelper hostName hostOptions)) {
     crocoite = {};
     game-luanti = {unstable = true;};
+    #jitsi = {};
   };
+
 
   # Your custom packages
   # Accessible through 'nix build', 'nix shell', etc

@@ -1,10 +1,13 @@
 {
+  lib,
+  ...
+}: {
   imports = [
     ./mini.nix
 
     {
-      boot.isContainer = true;
-      boot.kernel.enable = false;
+      boot.isContainer = lib.mkDefault true;
+      boot.kernel.enable = lib.mkDefault false;
     }
   ];
 }

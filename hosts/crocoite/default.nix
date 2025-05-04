@@ -33,22 +33,9 @@
       # })
     ];
 
-    # Configure your nixpkgs instance
-    config = {
-      allowUnfree = true;
-    };
   };
 
-  nix = {
-    settings.experimental-features = ["nix-command" "flakes"];
 
-    # https://lix.systems/ Lix is a modern, delicious implementation of the Nix package manager,
-    # focused on correctness, usability, and growth –
-    # and committed to doing right by its community.
-    package = pkgs.lix;
-
-    channel.enable = false;
-  };
 
   imports = [
     # steam and other stuff seems to depend on perl
@@ -77,7 +64,8 @@
     ../../modules/wm_and_de
 
     ../../modules/pkg_mgrmnt
-
+    
+    ../../system_profiles/defaults.nix
     # ../../tests
   ];
 }

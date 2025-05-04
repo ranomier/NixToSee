@@ -17,7 +17,6 @@
     # Disable if you don't want unfree packages
     allowUnfree = true;
   };
-  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # https://lix.systems/ Lix is a modern, delicious implementation of the Nix package manager,
   # focused on correctness, usability, and growth –
@@ -29,27 +28,5 @@
 
     ../../modules/locale.nix
 
-    (modulesPath + "/profiles/perlless.nix")
-    (modulesPath + "/profiles/minimal.nix")
-    {
-      environment.defaultPackages = [];
-      boot.kernel.enable = false;
-      boot.isContainer = true;
-      nixpkgs.overlays = [(self: super: {})];
-    }
-    {
-      # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
-      # (the default) this is the recommended approach. When using systemd-networkd it's
-      # still possible to use this option, but it's recommended to use it in conjunction
-      # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-      networking.useDHCP = lib.mkDefault true;
-      # networking.interfaces.ens18.useDHCP = lib.mkDefault true;
-    }
-  ];
-  disabledModules = [
-    (modulesPath + "/profiles/all-hardware.nix")
-    (modulesPath + "/profiles/base.nix")
-    #  <nixpkgs/nixos/modules/profiles/all-hardware.nix>
-    #  <nixpkgs/nixos/modules/profiles/base.nix>
-  ];
+    ../../system_profiles/mini.nix
 }
