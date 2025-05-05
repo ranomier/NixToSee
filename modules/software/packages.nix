@@ -15,8 +15,11 @@
     lm_sensors
 
     unstable.neovim
+
     git
     gitui
+    lazygit
+
     gnumake
     gcc
     nodePackages.npm
