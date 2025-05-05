@@ -16,6 +16,7 @@
 
     unstable.neovim
     git
+    gitui
     gnumake
     gcc
     nodePackages.npm
