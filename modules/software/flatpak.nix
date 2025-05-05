@@ -1,61 +1,53 @@
 {
   services.flatpak = {
     packages = [
-      {
+      { # flatpak permisssion gui
         origin = "flathub";
         appId = "com.github.tchx84.Flatseal";
-      } # flatpak permisssion gui
-      {
-        origin = "flathub";
-        appId = "com.mojang.Minecraft";
-      } # Lego for adults
-      {
-        origin = "flathub";
-        appId = "de.schmidhuberj.DieBahn";
-      } # Public transport connection viewer
-      {
-        origin = "flathub";
-        appId = "com.github.hugolabe.Wike";
-      } # Wikpedia, but in nice
-      {
+      }
+      { # Local chat AI
         origin = "flathub";
         appId = "io.gpt4all.gpt4all";
-      } # Local chat AI
-      {
+      }
+      { # note taking and brain organising
         origin = "flathub";
         appId = "md.obsidian.Obsidian";
-      } # note taking and brain organising
-      {
+      }
+      { # remote dekstop
         origin = "flathub";
         appId = "com.parsecgaming.parsec";
-      } # remote dekstop
+      }
+      { # electron media player (youtube and co)
+        origin = "flathub";
+        appId = "org.js.nuclear.Nuclear";
+      }
 
       # messenger
-      {
+      { # good e2ee, but centralized
         origin = "flathub";
         appId = "org.signal.Signal";
       }
-      {
+      { # bad/no e2ee, but centralized :3
         origin = "flathub";
         appId = "org.telegram.desktop";
       }
-      {
+      { # discord, no privacy
         origin = "flathub";
         appId = "dev.vencord.Vesktop";
-      } # More usable discord for linux
-      {
+      }
+      { # soundboard for chat apps
         origin = "flathub";
         appId = "io.github.Soundux";
-      } # soundboard
+      }
 
       # games
-      {
+      { # shooter
         origin = "flathub";
         appId = "com.etlegacy.ETLegacy";
-      } # shooter
-      {
+      }
+      { # Lego for adults
         origin = "flathub";
-        appId = "org.js.nuclear.Nuclear";
+        appId = "com.mojang.Minecraft";
       }
 
       #"com.obsproject.Studio" #this is another way to write it
