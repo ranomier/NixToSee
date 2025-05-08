@@ -1,55 +1,67 @@
 {
   services.flatpak = {
     packages = [
-      { # flatpak permisssion gui
+      {
+        # flatpak permisssion gui
         origin = "flathub";
         appId = "com.github.tchx84.Flatseal";
       }
-      { # Local chat AI
+      {
+        # Local chat AI
         origin = "flathub";
         appId = "io.gpt4all.gpt4all";
       }
-      { # note taking and brain organising
+      {
+        # note taking and brain organising
         origin = "flathub";
         appId = "md.obsidian.Obsidian";
       }
-      { # remote dekstop
+      {
+        # remote dekstop
         origin = "flathub";
         appId = "com.parsecgaming.parsec";
       }
-      { # electron media player (youtube and co)
+      {
+        # electron media player (youtube and co)
         origin = "flathub";
         appId = "org.js.nuclear.Nuclear";
       }
 
       # messenger
-      { # good e2ee, but centralized
+      {
+        # good e2ee, but centralized
         origin = "flathub";
         appId = "org.signal.Signal";
       }
-      { # bad/no e2ee, but centralized :3
+      {
+        # bad/no e2ee, but centralized :3
         origin = "flathub";
         appId = "org.telegram.desktop";
       }
-      { # discord, no privacy
+      {
+        # discord, no privacy
         origin = "flathub";
         appId = "dev.vencord.Vesktop";
       }
-      { # soundboard for chat apps
+      {
+        # soundboard for chat apps
         origin = "flathub";
         appId = "io.github.Soundux";
       }
 
       # games
-      { # shooter
+      {
+        # shooter
         origin = "flathub";
         appId = "com.etlegacy.ETLegacy";
       }
-      { # Lego for adults
+      {
+        # Lego for adults
         origin = "flathub";
         appId = "com.mojang.Minecraft";
       }
-      { # Lego for real adults
+      {
+        # Lego for real adults
         origin = "flathub";
         appId = "net.minetest.Minetest";
       }

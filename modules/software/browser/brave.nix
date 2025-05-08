@@ -1,3 +1,3 @@
 {pkgs, ...}: {
-  environment.systemPackages = [ pkgs.brave ];
+  environment.systemPackages = [pkgs.brave];
 }

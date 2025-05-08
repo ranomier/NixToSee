@@ -9,7 +9,6 @@
     allowUnfree = true;
   };
 
-
   imports = [
     ./hardware-configuration.nix
 

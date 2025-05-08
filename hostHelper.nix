@@ -1,14 +1,13 @@
-inArgs: hostname: hostOptions:
-let
+inArgs: hostname: hostOptions: let
   nixosSystem =
     if (hostOptions ? unstable && hostOptions.unstable)
-      then inArgs.nixos-unstable.lib.nixosSystem
-      else inArgs.nixpkgs.lib.nixosSystem;
+    then inArgs.nixos-unstable.lib.nixosSystem
+    else inArgs.nixpkgs.lib.nixosSystem;
 in
   nixosSystem {
     specialArgs = {inherit inArgs;};
     modules = [
-      (./hosts/${hostname})
+      ./hosts/${hostname}
       {
         networking.hostName = hostname;
 

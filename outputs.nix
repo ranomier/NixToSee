@@ -10,7 +10,6 @@ inArgs: let
   # This is a function that generates an attribute by calling a function you
   # pass to it, with each system as an argument
   forAllSystems = inArgs.nixpkgs.lib.genAttrs systems;
-
 in {
   # NixOS configuration entrypoint
   # Available through 'nixos-rebuild --flake .#your-hostname'
@@ -18,9 +17,11 @@ in {
     crocoite = {stateVersion = "24.05";};
 
     jitsi = {stateVersion = "24.11";};
-    game-luanti = {stateVersion = "25.05"; unstable = true;};
+    game-luanti = {
+      stateVersion = "25.05";
+      unstable = true;
+    };
   };
-
 
   # Your custom packages
   # Accessible through 'nix build', 'nix shell', etc

@@ -15,7 +15,8 @@
     (nerdfonts.override {
       fonts = [
         "FiraCode"
-        "DroidSansMono""JetBrainsMono"
+        "DroidSansMono"
+        "JetBrainsMono"
       ];
     })
   ];

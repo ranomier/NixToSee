@@ -5,7 +5,6 @@
   nixos-unstable,
   ...
 }: {
-
   #nixpkgs.overlays = [ overlays.unstable-packages ];
   nixpkgs = {
     # You can add overlays here
@@ -25,10 +24,7 @@
       #   });
       # })
     ];
-
   };
-
-
 
   imports = [
     # steam and other stuff seems to depend on perl
@@ -57,7 +53,7 @@
     ../../modules/wm_and_de
 
     ../../modules/pkg_mgrmnt
-    
+
     ../../system_profiles/defaults.nix
     # ../../tests
   ];
