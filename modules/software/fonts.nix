@@ -13,7 +13,10 @@
     fira-code-symbols
     #droid-sans-mono
     (nerdfonts.override {
-      fonts = ["FiraCode" "DroidSansMono" "JetBrainsMono"];
+      fonts = [
+        "FiraCode"
+        "DroidSansMono""JetBrainsMono"
+      ];
     })
   ];
 }

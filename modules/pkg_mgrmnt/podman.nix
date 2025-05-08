@@ -1,7 +1,8 @@
 {pkgs, ...}: {
   # Enable common container config files in /etc/containers
-  virtualisation.containers.enable = true;
   virtualisation = {
+    containers.enable = true;
+
     podman = {
       enable = true;
 
@@ -15,8 +16,6 @@
     };
   };
 
-  environment.sessionVariables = {
-  };
   # Useful other development tools
   environment.systemPackages = with pkgs; [
     dive # look into docker image layers
