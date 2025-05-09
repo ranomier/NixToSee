@@ -5,7 +5,7 @@
 }: {
   imports = [
     (modulesPath + "/profiles/minimal.nix")
-    (modulesPath + "/profiles/perlless.nix")
+    #(modulesPath + "/profiles/perlless.nix")
 
     {
       environment.defaultPackages = lib.mkDefault [];
