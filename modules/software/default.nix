@@ -8,7 +8,7 @@
     #./mpv.nix
     ./neovim.nix
     ./obs-studio.nix
-    ./packages.nix
+    ./packages
     ./programs.nix
     ./virt.nix
   ];

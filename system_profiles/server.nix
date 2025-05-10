@@ -1,18 +1,11 @@
 {
-  imports = let
-    packages = {pkgs, ...}: {
-      environment.systemPackages = with pkgs; [
-        tmux
-        wget
-      ];
-    };
-  in [
+  imports = [
     ./defaults.nix
     ./mini.nix
 
     ../modules/customisation.nix
     ../modules/software/neovim.nix
+    ../modules/software/packages/core.nix
 
-    packages
   ];
 }

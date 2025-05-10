@@ -16,7 +16,6 @@
 
     unstable.neovim
 
-    git
     gitui
     lazygit
 
@@ -31,21 +30,13 @@
     rustc
 
     # tooling
-    htop
     btop
-    ncdu
-    wget
     unstable.yt-dlp
     miniserve
-    file
-    unzip
-    tmux
     fzf
-    ripgrep
     qemu
     home-manager
     dfc
-    p7zip
     sops
 
     # move to homemanager?
