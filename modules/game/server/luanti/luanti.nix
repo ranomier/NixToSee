@@ -4,7 +4,7 @@ in {
   services.minetest-server = {
     enable = true;
 
-    gameId = "asuna";
+    gameId = "EinsDreiDreiSieben";
     port = port;
   };
 
