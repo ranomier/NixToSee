@@ -3,8 +3,6 @@
   pkgs,
   ...
 }: {
-  system.copySystemConfiguration = lib.mkDefault true;
-
   # Disable if you don't want unfree packages
   nixpkgs.config.allowUnfree = lib.mkDefault true;
 
