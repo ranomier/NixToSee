@@ -8,6 +8,7 @@ in
     specialArgs = {inherit inArgs;};
     modules = [
       ./hosts/${hostname}
+      #./debug.nix
       {
         networking.hostName = hostname;
 
