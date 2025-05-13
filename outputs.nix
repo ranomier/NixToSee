@@ -16,11 +16,14 @@ in {
   nixosConfigurations = builtins.mapAttrs (hostName: hostOptions: (hostHelper hostName hostOptions)) {
     crocoite = {stateVersion = "24.05";};
 
-    jitsi = {stateVersion = "24.11";};
+    #jitsi = {stateVersion = "24.11";};
+
     game-luanti = {
       stateVersion = "25.05";
       unstable = true;
     };
+
+    ext-julia = {stateVersion = "24.11";};
   };
 
   # Your custom packages
