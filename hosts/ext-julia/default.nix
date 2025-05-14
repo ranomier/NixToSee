@@ -2,13 +2,16 @@
   imports = [
     ./boot.nix
     ./hardware-configuration.nix
-
-    ((import ./wordpress.nix) {config=config; pkgs=pkgs; siteName="shop.kiezpalme.de"; port=80;})
+ 
+    ../../modules/hosting/wordpress.nix
     ../../modules/sec_auth/ssh-server.nix
 
     ../../system_profiles/server.nix
   ];
 
+  services.cWordpress = {
+    enable = true;
+  };
   services.openssh.ports = [11522];
   users = let
     username = "root";
