@@ -1,5 +1,4 @@
 inArgs: let
-  lib = inArgs.nixpkgs.lib;
   hostHelper = import ./hostHelper.nix inArgs;
 
   # Supported systems for your flake packages, shell, etc.
@@ -18,10 +17,10 @@ in {
 
     #jitsi = {stateVersion = "24.11";};
 
-    game-luanti = {
-      stateVersion = "25.05";
-      unstable = true;
-    };
+    # game-luanti = {
+    #   stateVersion = "25.05";
+    #   unstable = true;
+    # };
 
     ext-julia = {stateVersion = "24.11";};
   };
