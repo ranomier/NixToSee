@@ -12,6 +12,7 @@
     fira-code
     fira-code-symbols
     #droid-sans-mono
+
     (nerdfonts.override {
       fonts = [
         "FiraCode"

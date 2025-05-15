@@ -1,6 +1,8 @@
 {pkgs, ...}: {
-  hardware.graphics.enable = true;
-  hardware.graphics.extraPackages = with pkgs; [
-    libvdpau-va-gl
-  ];
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      libvdpau-va-gl
+    ];
+  };
 }

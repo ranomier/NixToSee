@@ -1,10 +1,13 @@
 {pkgs, ...}: {
   # install and set neovim as MANPAGER
-  environment.systemPackages = [pkgs.neovim];
-  environment.variables = {
-    "MANPAGER" = "nvim +Man!";
+  environment = {
+    systemPackages = [pkgs.neovim];
+    variables = {
+      # set neovim as default editor
+      "EDITOR" = "nvim";
 
-    # set neovim as default editor
-    "EDITOR" = "nvim";
+      # use neovim as manpager! :3
+      "MANPAGER" = "nvim +Man!";
+    };
   };
 }
