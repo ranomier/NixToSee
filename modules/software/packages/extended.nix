@@ -55,5 +55,6 @@
     rustdesk-flutter
     timer
     unstable.prusa-slicer
+    tenacity
   ];
 }

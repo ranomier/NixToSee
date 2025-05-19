@@ -6,6 +6,5 @@
     ../modules/customisation.nix
     ../modules/software/neovim.nix
     ../modules/software/packages/core.nix
-
   ];
 }
