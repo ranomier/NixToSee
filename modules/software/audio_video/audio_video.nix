@@ -1,18 +1,20 @@
 {pkgs, ...}: {
   # Enable sound with pipewire
-  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
 
-  services.pipewire = {
-    enable = true;
-
-    # If you want to use JACK applications, uncomment this
-    jack.enable = true;
-    pulse.enable = true;
-
-    alsa = {
+  services = {
+    pulseaudio.enable = false;
+    pipewire = {
       enable = true;
-      support32Bit = true;
+
+      # If you want to use JACK applications, uncomment this
+      jack.enable = true;
+      pulse.enable = true;
+
+      alsa = {
+        enable = true;
+        support32Bit = true;
+      };
     };
   };
 
