@@ -17,4 +17,10 @@
       ../../certificates/id_ed25519_game-luanti.pub
     ];
   };
+
+  services.journald.extraConfig = ''
+    Storage=persistent
+    SystemMaxUse=100M
+    SystemKeepFree=50M
+  '';
 }
