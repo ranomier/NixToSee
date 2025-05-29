@@ -17,10 +17,7 @@ in {
 
     #jitsi = {stateVersion = "24.11";};
 
-    #game-luanti = {
-    #  stateVersion = "25.05";
-    #  unstable = true;
-    #};
+    game-luanti = {stateVersion = "25.05";};
 
     #ext-julia = {stateVersion = "24.11";};
   };
