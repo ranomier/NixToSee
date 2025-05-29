@@ -5,14 +5,15 @@
   nixos-unstable,
   ...
 }: {
-  #nixpkgs.overlays = [ overlays.unstable-packages ];
+
   nixpkgs = {
     # You can add overlays here
     overlays = with inArgs.self.overlays; [
       # Add overlays your own flake exports (from overlays and pkgs dir):
+      unstable-packages
+
       #additions
       #modifications
-      unstable-packages
 
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
