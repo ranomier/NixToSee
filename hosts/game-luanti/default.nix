@@ -5,6 +5,7 @@
 
     ../../modules/game/server/luanti
     ../../modules/sec_auth/ssh-server.nix
+    ../../modules/pkg_mgrmnt/unattended-updates.nix
 
     ../../system_profiles/server.nix
   ];
