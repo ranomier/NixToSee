@@ -20,5 +20,6 @@
 
   imports = [
     ../modules/locale.nix
+    ../modules/sec_auth/sudo-rs.nix
   ];
 }
