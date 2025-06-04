@@ -1,5 +1,5 @@
 inArgs: let
-  hostHelper = import ./hostHelper.nix inArgs;
+  hostHelper = import ./lib/hostHelper.nix inArgs;
 
   # Supported systems for your flake packages, shell, etc.
   systems = [
