@@ -21,6 +21,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # theming
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # for managing flatpaks, like which ones are installed and which not
     nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
