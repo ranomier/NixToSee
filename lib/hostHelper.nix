@@ -7,7 +7,7 @@ in
   nixosSystem {
     specialArgs = {inherit inArgs;};
     modules = [
-      ./hosts/${hostname}
+      ../hosts/${hostname}
       #./debug.nix
       {
         networking.hostName = hostname;
