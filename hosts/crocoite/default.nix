@@ -56,6 +56,6 @@
     ../../modules/pkg_mgrmnt
 
     ../../system_profiles/defaults.nix
-    # ../../tests
+    # ../../experiments
   ];
 }
