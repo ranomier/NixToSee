@@ -5,7 +5,7 @@ inArgs: hostname: hostOptions: let
     else inArgs.nixpkgs.lib.nixosSystem;
 in
   nixosSystem {
-    specialArgs = {inherit inArgs;};
+    specialArgs = {inArgs = inArgs;};
     modules = [
       ../hosts/${hostname}
       #./debug.nix

@@ -27,7 +27,7 @@ in {
   #packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
 
   # Your custom packages and modifications, exported as overlays
-  overlays = import ./overlays {inherit inArgs;};
+  overlays = import ./overlays {inArgs = inArgs;};
 
   # Reusable nixos modules you might want to export
   # These are usually stuff you would upstream into nixpkgs
