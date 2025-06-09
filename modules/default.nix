@@ -1,11 +1,12 @@
 {
   imports = [
-    #./plymouth.nix
     ./accessibility.nix
     ./customisation.nix
     ./environment.nix
+    ./firewall.nix
     ./locale.nix
     ./networking.nix
-    ./firewall.nix
+    #./plymouth.nix
+    ./theming.nix
   ];
 }
