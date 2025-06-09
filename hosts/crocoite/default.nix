@@ -31,8 +31,6 @@
     # steam and other stuff seems to depend on perl
     #"${modulesPath}/profiles/perlless.nix"
 
-    inArgs.nix-flatpak.nixosModules.nix-flatpak
-
     #nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
     ./hardware-configuration.nix
     ./boot.nix
