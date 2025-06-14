@@ -1,5 +1,5 @@
 {
   imports = [
-    ./ranomier.nix
+    ./ranomier
   ];
 }

@@ -6,6 +6,5 @@
     extraGroups = ["networkmanager" "wheel" "podman"];
     shell = pkgs.zsh;
     useDefaultShell = true;
-    #packages = with pkgs; [];
   };
 }
