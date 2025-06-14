@@ -5,7 +5,10 @@ inArgs: hostname: hostOptions: let
     else inArgs.nixpkgs.lib.nixosSystem;
 in
   nixosSystem {
-    specialArgs = {inArgs = inArgs;};
+    specialArgs = {
+      inArgs = inArgs;
+      rootPath = inArgs.self;
+    };
     modules = [
       ../hosts/${hostname}
       #./debug.nix

@@ -28,32 +28,12 @@
   };
 
   imports = [
-    # steam and other stuff seems to depend on perl
-    #"${modulesPath}/profiles/perlless.nix"
 
-    #nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
     ./hardware-configuration.nix
     ./boot.nix
 
-    ../../modules
 
-    ../../modules/users
-
-    ../../modules/hardware
-
-    ../../modules/sec_auth
-
-    ../../modules/software
-    ../../modules/software/browser
-    ../../modules/software/nix-helper
-    ../../modules/software/shells
-    ../../modules/software/office
-
-    ../../modules/wm_and_de
-
-    ../../modules/pkg_mgrmnt
-
-    ../../system_profiles/defaults.nix
+    ../../system_profiles/desktop.nix
     # ../../experiments
   ];
 }

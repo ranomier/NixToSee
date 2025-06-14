@@ -1,9 +1,8 @@
 {
   imports = [
-    ./components/minify.nix
     ./components/nix-defaults.nix
 
+    ./importers/desktop.nix
     ./importers/general.nix
-    ./importers/server.nix
   ];
 }

@@ -10,6 +10,7 @@
 }: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
+    #nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
   ];
 
   boot.initrd.availableKernelModules = ["nvme" "ehci_pci" "xhci_pci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc"];

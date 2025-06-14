@@ -1,8 +1,6 @@
-{
-  lib,
-  pkgs,
-  ...
-}: {
+# This loads some nix and nixpkgs specific settints
+# i often need
+{lib, pkgs, ...}: {
   # Disable if you don't want unfree packages
   nixpkgs.config.allowUnfree = lib.mkDefault true;
 
@@ -15,11 +13,9 @@
 
     channel.enable = lib.mkDefault false;
 
-    settings.experimental-features = lib.mkDefault ["nix-command" "flakes"];
+    settings.experimental-features = lib.mkDefault [
+      "nix-command"
+      "flakes"
+    ];
   };
-
-  imports = [
-    ../modules/locale.nix
-    ../modules/sec_auth/sudo-rs.nix
-  ];
 }
