@@ -1,5 +1,5 @@
 {
   system = {
-    rebuild.enableNg = true;
+    rebuild.enableNg = false;
   };
 }
