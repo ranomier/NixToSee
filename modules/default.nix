@@ -11,7 +11,6 @@
     ./locale.nix
     ./networking.nix
     #./plymouth.nix # increases boot time too much
-    #./serial-console.nix # probably only for servers
     ./theming.nix
   ];
 }
