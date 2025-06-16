@@ -19,7 +19,7 @@ in {
 
     game-luanti = {stateVersion = "25.05";};
 
-    #ext-julia = {stateVersion = "24.11";};
+    ext-julia = {stateVersion = "25.05";};
   };
 
   # Your custom packages
