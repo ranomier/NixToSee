@@ -12,7 +12,8 @@
                 "type" = "ladspa";
                 "name" = "rnnoise";
                 "plugin" = "${pkgs.rnnoise-plugin}/lib/ladspa/librnnoise_ladspa.so";
-                "label" = "noise_suppressor_stereo";
+                # mono can be replaced with stereo for double the performance as cost
+                "label" = "noise_suppressor_mono";
                 "control" = {
                   "VAD Threshold (%)" = 75.0;
                 };
