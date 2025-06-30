@@ -15,7 +15,7 @@ in {
   nixosConfigurations = builtins.mapAttrs (hostName: hostOptions: (hostHelper hostName hostOptions)) {
     crocoite = {stateVersion = "24.05";};
 
-    #srv-videoconf = {stateVersion = "24.11";};
+    srv-videoconf = {stateVersion = "25.05";};
 
     game-luanti = {stateVersion = "25.05";};
 

@@ -3,7 +3,6 @@
 # to /etc/nixos/configuration.nix instead.
 {
   lib,
-  modulesPath,
   ...
 }: {
   boot = {
@@ -12,15 +11,6 @@
     kernelModules = [];
     extraModulePackages = [];
   };
-
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/d290e12c-d93c-45f6-b737-135b551c1951";
-    fsType = "ext4";
-  };
-
-  swapDevices = [
-    {device = "/dev/disk/by-uuid/8c56f52e-568a-4e03-b22c-6d1c7de7c118";}
-  ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
