@@ -15,16 +15,15 @@
     lm_sensors
 
     unstable.neovim
-
     gitui
     lazygit
+    meld
 
     gnumake
     gcc
     nodePackages.npm
     nodejs-slim
     python3
-    fd
     nodejs-slim
     cargo
     rustc
@@ -34,6 +33,7 @@
     unstable.yt-dlp
     miniserve
     fzf
+    fd
     qemu
     home-manager
     dfc
