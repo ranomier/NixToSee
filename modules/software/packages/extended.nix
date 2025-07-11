@@ -3,6 +3,7 @@
     # low level stuff
     efibootmgr
     #exfat
+    sshfs
     exfatprogs
     greetd.greetd
     greetd.tuigreet
