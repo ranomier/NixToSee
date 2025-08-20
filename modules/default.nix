@@ -2,6 +2,7 @@
   imports = [
     ./accessibility.nix
     ./customisation.nix
+    ./direnv.nix
 
     # should only be imported directly or via system_profiles
     #./dhcp-all-interfaces.nix
