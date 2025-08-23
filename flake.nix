@@ -27,6 +27,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-secrets = {
+      url = "path:/home/ranomier/Projects/nix-secrets";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # for managing flatpaks, like which ones are installed and which not
     nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
