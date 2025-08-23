@@ -1,1 +1,8 @@
 nixos-switch.log
+
+# make it possible to just put stuff in the repo to test things
+# or to have a reference, but they don't end up upstream
+**/*/scratch/
+scratch
+**/*/*.scratch
+*.scratch
