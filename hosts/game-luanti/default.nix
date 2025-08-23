@@ -1,4 +1,4 @@
-{rootPath, ...}: {
+{inArgs, rootPath, config, ...}: {
   imports = [
     ./boot.nix
     ./hardware-configuration.nix
@@ -6,7 +6,10 @@
 
     (rootPath + /modules/game/server/luanti)
     (rootPath + /modules/pkg_mgrmnt/unattended-updates.nix)
+    inArgs.nix-secrets.nixos-modules.game-luanti
   ];
+
+  environment.etc."bla".source = config.age.secrets.hello.path;
 
   users = let
     username = "root";
