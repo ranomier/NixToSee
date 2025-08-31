@@ -36,7 +36,6 @@
     fzf
     fd
     qemu
-    home-manager
     dfc
     sops
 

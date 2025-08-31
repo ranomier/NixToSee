@@ -1,9 +1,4 @@
 {inArgs, pkgs, ...}: {
-  imports = [
-    inArgs.home-manager.nixosModules.home-manager
-  ];
-  home-manager.useUserPackages = true;
-  home-manager.useGlobalPkgs = true;
   home-manager.users."ranomier" = {
 
     stylix.iconTheme = {
