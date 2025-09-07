@@ -2,12 +2,6 @@
   #imports = [
   #  ./components/rofi.nix
   #];
-  # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = false;
-
-  # force chromium and electron apps to use wayland
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   xdg = {
     portal = {
@@ -20,76 +14,76 @@
       ];
     };
   };
+
   # Enable the hyprland window manager with additions
   programs = {
     hyprland = {
       enable = true;
-      xwayland.enable = true;
-      systemd.setPath.enable = true;
       #package = pkgs.unstable.hyprland;
+
+      systemd.setPath.enable = true;
+      withUWSM = true;
+      xwayland.enable = true;
     };
     hyprlock = {
       enable = true;
       #package = pkgs.unstable.hyprlock;
     };
   };
-  services.hypridle = {
-    enable = true;
-    #package = pkgs.unstable.hypridle;
+
+  services = {
+    hypridle = {
+      enable = true;
+      #package = pkgs.unstable.hypridle;
+    };
+
+    # for mounting stuff, also needs a auth agent like lxqt.lxqt-policykit
+    gvfs.enable = true;
   };
 
-  # for mounting stuff, also needs a auth agent like lxqt.lxqt-policykit
-  services.gvfs.enable = true;
+  environment = {
+    pathsToLink = ["/share/foot"];
 
-  #qt = {
-  #  enable = true;
-  #  platformTheme = "qt5ct";
-  #  style = "kvantum";
-  #};
+    systemPackages = with pkgs; [
+      hyprsunset
+      hyprpolkitagent
+      hyprutils
+      # for tiling window manager
+      foot
+      foot.themes
+      wofi
+      wl-clipboard # for waydroid and maybe more
+      wlogout
+      pamixer
+      waybar
+      hyprpaper
+      #unstable.kanshi
+      shikane
+      dunst
 
-  environment.pathsToLink = ["/share/foot"];
+      # audio
+      mixxc
+      ncpamixer
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    hyprsunset
-    hyprpolkitagent
-    hyprutils
-    # for tiling window manager
-    foot
-    foot.themes
-    wofi
-    wl-clipboard # for waydroid and maybe more
-    wlogout
-    pamixer
-    waybar
-    hyprpaper
-    #unstable.kanshi
-    shikane
-    dunst
+      # for screenshot + annotation
+      grim
+      slurp
+      satty
+      flameshot
 
-    # audio
-    mixxc
-    ncpamixer
+      # theming
+      gruvbox-plus-icons
+      gruvbox-gtk-theme
+      kde-gruvbox
+      capitaine-cursors-themed
+      libsForQt5.qtstyleplugin-kvantum
+      kdePackages.qtstyleplugin-kvantum
 
-    # for screenshot + annotation
-    grim
-    slurp
-    satty
-    flameshot
+      # polkit auth agent
+      lxqt.lxqt-policykit
 
-    # theming
-    gruvbox-plus-icons
-    gruvbox-gtk-theme
-    kde-gruvbox
-    capitaine-cursors-themed
-    libsForQt5.qtstyleplugin-kvantum
-    kdePackages.qtstyleplugin-kvantum
-
-    # polkit auth agent
-    lxqt.lxqt-policykit
-
-    # file manager
-    nautilus
-  ];
+      # file manager
+      nautilus
+    ];
+  };
 }
