@@ -1,5 +1,5 @@
-{
+{lib, ...}: {
   system = {
-    rebuild.enableNg = false;
+    rebuild.enableNg = lib.mkDefault false;
   };
 }

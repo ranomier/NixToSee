@@ -1,6 +1,6 @@
 # This loads some nix and nixpkgs specific settints
 # i often need
-{lib, pkgs, ...}: {
+{lib, ...}: {
   # Disable if you don't want unfree packages
   nixpkgs.config.allowUnfree = lib.mkDefault true;
 

@@ -1,10 +1,10 @@
-{inArgs, pkgs, ...}: {
+{inArgs, pkgs, lib, ...}: {
   imports = [ inArgs.home-manager.nixosModules.home-manager ];
 
   environment.systemPackages = [ pkgs.home-manager ];
 
   home-manager = {
-    useUserPackages = true;
-    useGlobalPkgs = true;
+    useUserPackages = lib.mkDefault true;
+    useGlobalPkgs = lib.mkDefault true;
   };
 }
