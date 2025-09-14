@@ -19,5 +19,8 @@ This whole folder is for the most part just a system to clean up importing
   - The [components](system_profiles/components) directory:
     - Should never import anything from this repository
     - It can import things from nixpkgs
-    - Should set only basic "system" settings
+    - Should set only basic "system" wide settings
       ("system" is not well defined)
+      NixOS has profiles this should be a similar concept to them
+      - [NixOS profiles](https://github.com/NixOS/nixpkgs/tree/master/nixos/modules/profiles)
+      - [NixOS manual on profiles](https://nixos.org/manual/nixos/stable/#ch-profiles)
