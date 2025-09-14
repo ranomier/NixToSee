@@ -2,6 +2,8 @@
 
 *nichts* in german means nothing, if you say it fast it sounds like nix.
 
+[Beautiful button to my notes](docs/notes)
+
 ## folder structure
 
 ### system_profiles
