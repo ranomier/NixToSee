@@ -1,6 +1,4 @@
 inArgs: let
-  hostHelper = import ./lib/hostHelper.nix inArgs;
-
   # Supported systems for your flake packages, shell, etc.
   systems = [
     #"aarch64-linux"
@@ -12,15 +10,7 @@ inArgs: let
 in {
   # NixOS configuration entrypoint
   # Available through 'nixos-rebuild --flake .#your-hostname'
-  nixosConfigurations = builtins.mapAttrs (hostName: hostOptions: (hostHelper hostName hostOptions)) {
-    crocoite = {stateVersion = "24.05";};
-
-    #srv-videoconf = {stateVersion = "25.05";};
-
-    game-luanti = {stateVersion = "25.05";};
-
-    ext-julia = {stateVersion = "25.05";};
-  };
+  nixosConfigurations = import ./hosts inArgs;
 
   # Your custom packages
   # Accessible through 'nix build', 'nix shell', etc
