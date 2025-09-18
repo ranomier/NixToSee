@@ -1,6 +1,9 @@
-{inArgs, pkgs, ...}: {
+{
+  inArgs,
+  pkgs,
+  ...
+}: {
   home-manager.users."ranomier" = {
-
     stylix.iconTheme = {
       enable = true;
       package = pkgs.gruvbox-plus-icons;

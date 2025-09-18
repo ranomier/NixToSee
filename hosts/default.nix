@@ -1,7 +1,7 @@
 inArgs: let
   hostHelper = import ../lib/hostHelper.nix inArgs;
 in
-builtins.mapAttrs (hostName: hostOptions: (hostHelper hostName hostOptions)) {
+  builtins.mapAttrs (hostName: hostOptions: (hostHelper hostName hostOptions)) {
     crocoite = {stateVersion = "24.05";};
 
     #srv-videoconf = {stateVersion = "25.05";};
@@ -9,7 +9,7 @@ builtins.mapAttrs (hostName: hostOptions: (hostHelper hostName hostOptions)) {
     game-luanti = {stateVersion = "25.05";};
 
     ext-julia = {stateVersion = "25.05";};
-}
+  }
 # This value determines the NixOS release from which the default
 # settings for stateful data, like file locations and database versions
 # on your system were taken. It‘s perfectly fine and recommended to leave

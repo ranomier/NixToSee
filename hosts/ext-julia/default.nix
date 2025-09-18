@@ -1,4 +1,9 @@
-{pkgs, rootPath, lib, ...}:{
+{
+  pkgs,
+  rootPath,
+  lib,
+  ...
+}: {
   imports = [
     ./boot.nix
     ./hardware-configuration.nix

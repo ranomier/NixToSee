@@ -5,7 +5,6 @@
   nixos-unstable,
   ...
 }: {
-
   nixpkgs = {
     # You can add overlays here
     overlays = with inArgs.self.overlays; [
@@ -28,10 +27,8 @@
   };
 
   imports = [
-
     ./hardware-configuration.nix
     ./boot.nix
-
 
     ../../system_profiles/desktop.nix
     # ../../experiments

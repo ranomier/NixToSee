@@ -1,5 +1,5 @@
 {inArgs, ...}: {
-  imports = [ inArgs.nix-flatpak.nixosModules.nix-flatpak ];
+  imports = [inArgs.nix-flatpak.nixosModules.nix-flatpak];
   services.flatpak = {
     enable = true;
     update.auto = {

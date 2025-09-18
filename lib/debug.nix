@@ -1,7 +1,10 @@
-{ ... }:
-{
+{...}: {
   imports = [
-    {lib, config, ... }: {
+    {
+      lib,
+      config,
+      ...
+    }: {
       options.tempDebugVar = lib.mkOption {
         type = lib.types.str;
         default = "";

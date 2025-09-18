@@ -18,5 +18,4 @@
       (rootPath + /certificates/id_ed25519_srv-videoconf.pub)
     ];
   };
-
 }

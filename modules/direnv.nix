@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   #set to default values
   programs.direnv = {
     package = pkgs.direnv;

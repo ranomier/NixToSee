@@ -1,4 +1,9 @@
-{inArgs, rootPath, config, ...}: {
+{
+  inArgs,
+  rootPath,
+  config,
+  ...
+}: {
   imports = [
     ./boot.nix
     ./hardware-configuration.nix

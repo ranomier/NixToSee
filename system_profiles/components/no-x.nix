@@ -6,4 +6,3 @@
   # force chromium and electron apps to use wayland
   environment.sessionVariables.NIXOS_OZONE_WL = lib.mkDefault "1";
 }
-

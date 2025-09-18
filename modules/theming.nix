@@ -1,4 +1,8 @@
-{pkgs, inArgs, ...}: {
+{
+  pkgs,
+  inArgs,
+  ...
+}: {
   imports = [
     inArgs.stylix.nixosModules.stylix
   ];

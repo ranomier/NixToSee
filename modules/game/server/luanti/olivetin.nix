@@ -1,4 +1,8 @@
-{ pkgs, lib, ... }: let
+{
+  pkgs,
+  lib,
+  ...
+}: let
   _pull = pkgs.writeShellScript "pull" ''
     export GIT_SSH_COMMAND='ssh -i /var/lib/minetest/.ssh/id_ed25519_temp -o IdentitiesOnly=yes'
     git -C /var/lib/minetest/.minetest/games/EinsDreiDreiSieben pull
@@ -11,7 +15,6 @@
     echo "after"
   '';
   restart = _restart.outPath;
-
 in {
   users.users."minetest".linger = true;
   services.olivetin = {
@@ -40,23 +43,22 @@ in {
   };
   security.sudo-rs.extraRules = [
     {
-      users = [ "olivetin" ];
+      users = ["olivetin"];
       runAs = "minetest";
       commands = [
         {
           command = pull;
-          options = [ "NOPASSWD" ];
+          options = ["NOPASSWD"];
         }
       ];
     }
     {
-
-      users = [ "olivetin" ];
+      users = ["olivetin"];
       runAs = "root";
       commands = [
         {
           command = restart;
-          options = [ "NOPASSWD" ];
+          options = ["NOPASSWD"];
         }
       ];
     }

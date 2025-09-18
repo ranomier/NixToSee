@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   nixpkgs.overlays = [
     (self: super: {
       qtile-unwrapped = super.qtile-unwrapped.overrideAttrs (_: rec {

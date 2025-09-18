@@ -1,6 +1,10 @@
 # This makes an installation smaller at the cost of
 # features (and maybe even stability)
-{lib, modulesPath, ...}: {
+{
+  lib,
+  modulesPath,
+  ...
+}: {
   imports = [
     (modulesPath + "/profiles/minimal.nix")
     #(modulesPath + "/profiles/perlless.nix")
