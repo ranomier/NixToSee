@@ -63,7 +63,7 @@
       {
         # Lego for real adults
         origin = "flathub";
-        appId = "net.minetest.Minetest";
+        appId = "org.luanti.luanti";
       }
 
       #"com.obsproject.Studio" #this is another way to write it
