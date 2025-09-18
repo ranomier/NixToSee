@@ -3,6 +3,8 @@
   imports = [
     (rootPath + /modules)
 
+    (rootPath + /modules/game/desktop)
+
     (rootPath + /modules/hardware)
 
     (rootPath + /modules/pkg_mgrmnt)
