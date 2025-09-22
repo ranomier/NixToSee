@@ -19,7 +19,7 @@ in {
 
 
   # Your custom packages and modifications, exported as overlays
-  overlays = import ./overlays {inArgs = inArgs;};
+  overlays = import ./overlays inArgs;
 
 
   # Reusable nixos modules you might want to export
