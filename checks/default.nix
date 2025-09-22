@@ -9,8 +9,8 @@ inArgs: {
       "sh" "-c"
       ''
         export PATH=${pkgs.busybox}/bin:$PATH
-
         mkdir -p "$out"
+
         "${pkgs.flake-checker}/bin/flake-checker" \
           --no-telemetry \
           "${inArgs.self + /flake.lock}" \
@@ -18,6 +18,5 @@ inArgs: {
             2>&1 | tee "$out/output"
       ''
     ];
-
   };
 }
