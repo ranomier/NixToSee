@@ -6,3 +6,7 @@ nixos-switch.log
 scratch
 **/*/*.scratch
 *.scratch
+
+# let's not commit results from nix builds
+**/*/result/
+result
