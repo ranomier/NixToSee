@@ -1,8 +1,5 @@
 {
-  pkgs,
   inArgs,
-  modulesPath,
-  nixos-unstable,
   ...
 }: {
   nixpkgs = {
