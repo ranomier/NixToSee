@@ -10,3 +10,9 @@ scratch
 # let's not commit results from nix builds
 **/*/result/
 result
+
+# let' also avoid qcow images
+**/*/*.qcow
+*.qcow
+**/*/*.qcow2
+*.qcow2
