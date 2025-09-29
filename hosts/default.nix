@@ -9,6 +9,11 @@ in
     game-luanti = {stateVersion = "25.05";};
 
     ext-julia = {stateVersion = "25.05";};
+
+    testvm = {
+      stateVersion = "25.11";
+      unstable = true;
+    };
   }
 # This value determines the NixOS release from which the default
 # settings for stateful data, like file locations and database versions
