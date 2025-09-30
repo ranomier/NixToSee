@@ -11,7 +11,8 @@ in
     };
     modules = [
       ../hosts/${hostname}
-      #./debug.nix
+      ./debugOption.nix
+
       {
         networking.hostName = hostname;
 
