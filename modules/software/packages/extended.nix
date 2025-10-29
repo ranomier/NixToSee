@@ -5,8 +5,6 @@
     #exfat
     sshfs
     exfatprogs
-    greetd.greetd
-    greetd.tuigreet
     killall
     vulnix
 
@@ -38,23 +36,5 @@
     qemu
     dfc
     sops
-
-    # move to homemanager?
-    unstable.mumble
-    amberol
-    mpv
-    nuclear
-    #zathura
-    sioyek
-    #feh
-    nomacs
-    #unstable.obsidian
-    keepassxc
-    #minecraft
-    element-desktop
-    rustdesk-flutter
-    timer
-    unstable.prusa-slicer
-    tenacity
   ];
 }

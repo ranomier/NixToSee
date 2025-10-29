@@ -1,6 +1,11 @@
 {pkgs, ...}: let
   default_command = "Hyprland";
 in {
+  environment.systemPackages = with pkgs; [
+    greetd.greetd
+    greetd.tuigreet
+  ];
+
   services.greetd = {
     enable = true;
     vt = 7;
