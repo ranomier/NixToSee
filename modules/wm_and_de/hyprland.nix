@@ -83,7 +83,8 @@
       lxqt.lxqt-policykit
 
       # file manager
-      nautilus
+      #nautilus
+      pantheon.elementary-files
     ];
   };
 }
