@@ -1,7 +1,7 @@
 {
   inputs = {
     # Main nix package repository
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
 
     # NixOS unstable
     nixos-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -17,13 +17,13 @@
 
     # additional user specific nix modules
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # theming
     stylix = {
-      url = "github:danth/stylix/release-25.05";
+      url = "github:danth/stylix/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
