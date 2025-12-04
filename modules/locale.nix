@@ -9,7 +9,7 @@
     # Select internationalisation properties.
     defaultLocale = "en_GB.UTF-8";
 
-    #supportedLocales = [
+    #extraLocales = [
     #  "en_GB.UTF-8"
     #  "en_US.UTF-8"
     #  "de_DE.UTF-8"
