@@ -2,8 +2,8 @@
   default_command = "Hyprland";
 in {
   environment.systemPackages = with pkgs; [
-    greetd.greetd
-    greetd.tuigreet
+    greetd
+    tuigreet
   ];
 
   services.greetd = {
@@ -15,7 +15,7 @@ in {
       };
       default_session = {
         command = ''
-          ${pkgs.greetd.tuigreet}/bin/tuigreet \
+          ${pkgs.tuigreet}/bin/tuigreet \
             --time \
             --time-format '%Y-%m-%dT%H:%M:%S %A' \
             --remember \
