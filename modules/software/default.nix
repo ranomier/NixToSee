@@ -1,7 +1,6 @@
 {
   imports = [
     ./android.nix
-    ./flatpak.nix
     ./fonts.nix
     #./mpv.nix
     ./neovim.nix

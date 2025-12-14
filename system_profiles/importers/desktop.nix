@@ -17,6 +17,7 @@
     (rootPath + /modules/software/nix-helper)
     (rootPath + /modules/software/office)
     (rootPath + /modules/software/packages)
+    (rootPath + /modules/software/sandboxed)
     (rootPath + /modules/software/shells)
 
     (rootPath + /modules/users)
