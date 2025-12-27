@@ -29,5 +29,7 @@
 
     ../../system_profiles/desktop.nix
     # ../../experiments
+
+    ./39c3-wifi.nix # temp
   ];
 }
