@@ -1,6 +1,6 @@
 # This loads some nix and nixpkgs specific settints
 # i often need
-{lib, ...}: {
+{ lib, ... }: {
   # Disable if you don't want unfree packages
   nixpkgs.config.allowUnfree = lib.mkDefault true;
 
@@ -13,9 +13,19 @@
 
     channel.enable = lib.mkDefault false;
 
-    settings.experimental-features = lib.mkDefault [
-      "nix-command"
-      "flakes"
-    ];
+    settings.experimental-features = lib.mkDefault [ "nix-command" "flakes" ];
+
+    registry = {
+      n = {
+        from = {
+          type = "indirect";
+          id = "n";
+        };
+        to = {
+          type = "indirect";
+          id = "nixpkgs";
+        };
+      };
+    };
   };
 }
