@@ -9,6 +9,9 @@
     # ready made hardware configurations. e.G.: Power saving
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
+    # minimal mirror of the flake schema, but flips from a primary host approach to a primary feature approach
+    flake-parts.url = "github:hercules-ci/flake-parts";
+
     # generating filesystems in different formats
     nixos-generators = {
       url = "github:nix-community/nixos-generators";
@@ -36,5 +39,5 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
-  outputs = inArgs: import ./outputs.nix inArgs;
+  outputs = inputs: import ./outputs.nix inputs;
 }

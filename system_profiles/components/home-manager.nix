@@ -1,10 +1,10 @@
 {
-  inArgs,
+  inputs,
   pkgs,
   lib,
   ...
 }: {
-  imports = [inArgs.home-manager.nixosModules.home-manager];
+  imports = [inputs.home-manager.nixosModules.home-manager];
 
   environment.systemPackages = [pkgs.home-manager];
 

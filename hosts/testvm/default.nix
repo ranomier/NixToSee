@@ -1,4 +1,4 @@
-{inArgs, ...}: {
+{
   imports = [
     (
       {

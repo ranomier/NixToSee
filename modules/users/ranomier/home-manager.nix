@@ -1,5 +1,4 @@
 {
-  inArgs,
   pkgs,
   ...
 }: {

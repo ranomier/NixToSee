@@ -1,10 +1,10 @@
 {
   pkgs,
-  inArgs,
+  inputs,
   ...
 }: {
   imports = [
-    inArgs.stylix.nixosModules.stylix
+    inputs.stylix.nixosModules.stylix
   ];
   stylix = {
     enable = true;

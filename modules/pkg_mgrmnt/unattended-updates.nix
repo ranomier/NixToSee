@@ -1,7 +1,7 @@
-{inArgs, ...}: {
+{inputs, ...}: {
   system.autoUpgrade = {
     enable = true;
-    flake = inArgs.self.outPath;
+    flake = inputs.self.outPath;
     flags = [
       "--update-input"
       "nixpkgs"

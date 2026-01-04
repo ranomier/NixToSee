@@ -1,10 +1,10 @@
 {
-  inArgs,
+  inputs,
   ...
 }: {
   nixpkgs = {
     # You can add overlays here
-    overlays = with inArgs.self.overlays; [
+    overlays = with inputs.self.overlays; [
       # Add overlays your own flake exports (from overlays and pkgs dir):
       unstable-packages
 
