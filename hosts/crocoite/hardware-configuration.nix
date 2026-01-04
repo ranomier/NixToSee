@@ -34,8 +34,10 @@
         "rtsx_pci_sdmmc"
       ];
 
-      luks.devices."luks-3b194756-e29b-425a-b088-0a0468840011".device =
-        "/dev/disk/by-uuid/3b194756-e29b-425a-b088-0a0468840011";
+      luks.devices."luks-3b194756-e29b-425a-b088-0a0468840011" = {
+        device = "/dev/disk/by-uuid/3b194756-e29b-425a-b088-0a0468840011";
+        allowDiscards = true;
+      };
     };
 
     #kernelPackages = pkgs.linuxPackages_latest;
