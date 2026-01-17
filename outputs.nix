@@ -9,6 +9,9 @@ in
 
     imports = [
       ./hosts
+
+      # Custom packages and modifications, exported as overlays
+      ./overlays
     ];
 
   # use the flake-parts flake structure
@@ -31,7 +34,7 @@ in
 
 
   # Your custom packages and modifications, exported as overlays
-  overlays = import ./overlays inputs;
+  #overlays = import ./overlays inputs;
 
 
   # Your custom packages
