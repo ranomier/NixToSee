@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home-manager.users."ranomier" = {
     stylix.iconTheme = {
       enable = true;

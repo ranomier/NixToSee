@@ -1,7 +1,4 @@
-{
-  inputs,
-  ...
-}: {
+{inputs, ...}: {
   nixpkgs = {
     # You can add overlays here
     overlays = with inputs.self.overlays; [

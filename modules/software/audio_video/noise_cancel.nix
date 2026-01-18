@@ -33,7 +33,6 @@
             ];
           };
 
-
           "capture.props" = {
             "node.name" = "effect_input.rnnoise";
             "node.passive" = true;

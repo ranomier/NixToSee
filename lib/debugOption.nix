@@ -6,7 +6,8 @@
   example:
     config.debug = config.networking.hostName;
 
-  **/
+  *
+  */
   options.debug = lib.mkOption {
     type = lib.types.raw;
     default = "empty, for some reason ...";

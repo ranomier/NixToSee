@@ -19,7 +19,5 @@
     #      8|     packages = builtins.map (p: "${p.name}") config.environment.systemPackages;
     #       |                                    ^
     #      9|     sortedUnique = builtins.sort builtins.lessThan (pkgs.lib.lists.unique packages);
-
-
   ];
 }
