@@ -1,11 +1,11 @@
 {
   imports = [
-    ./android.nix
     ./fonts.nix
+    ./kdeconnect.nix
     #./mpv.nix
     ./neovim.nix
     ./obs-studio.nix
-    ./kdeconnect.nix
     ./virt.nix
+    ./waydroid.nix
   ];
 }
