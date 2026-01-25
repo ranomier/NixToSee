@@ -9,9 +9,23 @@
   environment.systemPackages = [
     (pkgs.wrapOBS {
       plugins = with pkgs.obs-studio-plugins; [
-        wlrobs
-        obs-backgroundremoval
+        # capture
+        wlrobs # capture on wlroots based wayland compositors
+        obs-vkcapture #Vulkan/OpenGL game capture
         obs-pipewire-audio-capture
+
+        # output encoding
+        obs-vaapi #hardware acceleration, VAAPI support via GStreamer
+
+        # filter/effects
+        obs-gstreamer # encoder and video filter plugin to use GStreamer elements/pipelines (manual code required)
+
+        obs-backgroundremoval # background crop without green screen
+
+        obs-composite-blur
+        obs-dvd-screensaver
+        obs-retro-effects
+        pixel-art
       ];
     })
   ];
