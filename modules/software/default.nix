@@ -3,7 +3,7 @@
     ./audio.nix
     ./fonts.nix
     ./kdeconnect.nix
-    #./mpv.nix
+    ./mpv.nix
     ./neovim.nix
     ./obs-studio.nix
     ./virt.nix

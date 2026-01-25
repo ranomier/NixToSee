@@ -7,7 +7,7 @@
     nuclear
 
     # Video
-    mpv
+    #mpv
 
     # PDF
     #zathura
