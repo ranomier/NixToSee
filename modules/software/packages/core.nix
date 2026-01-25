@@ -5,6 +5,7 @@
     htop
     ncdu
     p7zip
+    pciutils
     ripgrep
     tmux
     unzip
