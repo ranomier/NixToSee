@@ -26,5 +26,9 @@
     timer
     unstable.prusa-slicer
     tenacity
+
+    # fallback if something does not run on nixos
+    distrobox
+    distrobox-tui
   ];
 }
