@@ -11,8 +11,9 @@
 
     (rootPath + /modules/sec_auth)
 
+    (rootPath + /modules/pipewire)
+
     (rootPath + /modules/software)
-    (rootPath + /modules/software/audio_video)
     (rootPath + /modules/software/browser)
     (rootPath + /modules/software/nix-helper)
     (rootPath + /modules/software/office)
