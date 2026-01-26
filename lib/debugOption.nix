@@ -14,6 +14,8 @@
     visible = false;
     internal = true;
     description = ''
+      Basically just to store anything to look into it
+
       use with:
         config.debug = insert_aynthing;
 
