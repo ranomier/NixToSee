@@ -1,42 +1,32 @@
 { pkgs, ... }:
-{
-  environment.systemPackages = with pkgs; [
-    ( mpv.override { scripts = [
+let
+  custom-mpv = pkgs.mpv.override {
+    scripts = with pkgs.mpvScripts; [
       # new osc
-      mpvScripts.modernz
-      mpvScripts.thumbfast # optional depencency
+      modernz
+      thumbfast # optional depencency
 
-      mpvScripts.quality-menu
-      mpvScripts.sponsorblock
-    ]; } )
-  ];
+      mpris
+      mpv-notify-send
+
+      quality-menu
+      reload
+      sponsorblock
+      youtube-chat
+
+    ];
+  };
+in {
+  environment.systemPackages = [ custom-mpv ];
 }
-#{
-#  pkgs,
-#  home-manager,
-#  ...
-#}: {
-#  home-manager.programs.mpv = {
-#    enable = true;
-#
-#    package = (
-#      pkgs.mpv-unwrapped.wrapper {
-#        scripts = with pkgs.mpvScripts; [
-#          uosc
-#          sponsorblock
-#        ];
-#
-#        mpv = pkgs.mpv-unwrapped.override {
-#          waylandSupport = true;
-#          ffmpeg = pkgs.ffmpeg-full;
-#        };
-#      }
-#    );
-#
-#    config = {
-#      profile = "high-quality";
-#      ytdl-format = "bestvideo+bestaudio";
-#      cache-default = 4000000;
-#    };
-#  };
-#}
+# https://github.com/akiirui/mpv-handler 
+# needed? it kinda already works
+
+# https://github.com/Lassulus/wrappers/tree/main?tab=readme-ov-file#overview
+# maybe use this
+
+# https://github.com/po5/thumbfast
+# create config for this
+
+# https://github.com/Samillion/ModernZ/blob/main/modernz.conf
+# use this config
