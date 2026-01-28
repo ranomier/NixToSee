@@ -7,6 +7,7 @@
     ./mpv.nix
     ./neovim.nix
     ./obs-studio.nix
+    ./ringboard.nix
     ./virt.nix
     ./waydroid.nix
   ];
