@@ -2,6 +2,7 @@
   imports = [
     ./audio.nix
     ./fonts.nix
+    ./git.nix
     ./kdeconnect.nix
     ./mpv.nix
     ./neovim.nix

@@ -3,5 +3,6 @@
   imports = [
     (rootPath + /modules/locale.nix)
     (rootPath + /modules/sec_auth/sudo-rs.nix)
+    (rootPath + /modules/software/git.nix)
   ];
 }
