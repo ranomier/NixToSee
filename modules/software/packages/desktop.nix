@@ -17,6 +17,9 @@
     #feh
     nomacs
 
+    # image editor
+    krita
+
     # Comunication
     unstable.mumble
     element-desktop
