@@ -18,7 +18,8 @@
     });
   };
 
-  users.users.ranomier.extraGroups = ["scanner" "lp"];
+  # FIX: this seems ugly because of the specific username
+  users.users.ranomier.extraGroups = ["scanner"];
 
   # only for the scan and maybe print clients
   environment.systemPackages = with pkgs; [
